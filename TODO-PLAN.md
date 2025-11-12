@@ -29,6 +29,7 @@
 - ✅ 完成：FAQ 丰富至 10 项以上；HowTo 增补“公式与示例”段落
 - ✅ 完成：HowTo 增补“常见误区”段落；复制结果按钮；aria-live 提示
 - ✅ 完成：修复 Markdown 换行渲染（去除 \n 转义，改多行模板字符串）
+- ✅ 完成：明细表（逐期）+ CSV 导出、税后估算开关（主计算器）
 - 🚧 进行中：移动端/可访问性细节打磨（输入错误提示、焦点管理）、内容润色
 - ⏳ 待决策：提前支取罚金模块（价值评估后）
 
@@ -104,6 +105,12 @@
   - [x] Interest/Net：正值绿色、负值红色、零灰色
   - [x] Effective Yield：蓝色强调
   - [x] Penalty：红色强调、Refund：蓝色强调、Break‑even：紫色强调
+### 计算增强（新增）
+- [x] APY/APR 输入模式切换（APR→APY 按频率换算）
+- [x] 复利频率扩展：Daily/Semi/Monthly/Quarterly/Annually
+- [x] 快捷期限芯片（3/6/9/12/18/24/36/48/60）
+- [x] 明细表（逐期）+ CSV 导出
+- [x] 税后估算开关（税率%）
 
 验收标准：表单可在移动端顺畅操作；无抖动；输入 200ms 内出结果；结果可复制。
 
@@ -151,6 +158,14 @@
 - [x] 按需渲染/零水合 FAQ（SSR 文案 + details/summary + FAQPage JSON-LD 服务端注入）
 - [ ] 继续压缩未用 JS（目标 ≤ 10 KiB），审查 "use client" 边界与动态导入切分点
 - [x] 复测移动端 Performance（0.94 ≥ 0.90）
+
+## 11. 多语言（ES 首发）
+
+- [x] 启用 locales：en、es（默认 en）
+- [x] Header 恢复语言切换（EN/ES）
+- [x] Alternates：首页与法务页加入 es hreflang
+- [x] FAQ：SSR 文案 + JSON‑LD 随语言输出
+- [ ] es 文案复核（术语统一：Inicio、Penalización、Composición 等）
 
 验收标准：本地测评达标；无布局位移（CLS 可忽略级）。
 
