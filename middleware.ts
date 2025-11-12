@@ -7,6 +7,11 @@ const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
   localePrefix: 'as-needed',
+  // Important: disable cookie-based locale detection so that
+  // the URL alone determines the active locale. This avoids
+  // cases where '/' (no prefix) still renders a non-default
+  // locale (e.g., 'es') due to a persisted cookie.
+  localeDetection: false,
 });
 
 export default function middleware(request: NextRequest) {
