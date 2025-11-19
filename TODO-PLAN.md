@@ -166,6 +166,7 @@
 - [x] Alternates：首页与法务页加入 es hreflang
 - [x] FAQ：SSR 文案 + JSON‑LD 随语言输出
 - [ ] es 文案复核（术语统一：Inicio、Penalización、Composición 等）
+  - [x] 新增 Methodology/Calculation Notes 专节（EN/ES）
 
 验收标准：本地测评达标；无布局位移（CLS 可忽略级）。
 
@@ -174,6 +175,9 @@
 ## 6. 分析与合规（M5）
 
 - [x] GA 事件（预埋）：calculate、copy_result（仅在配置 GA 时上报）
+- [ ] （可选）Consent Mode v2：如未来需细化 EU/UK 区域同意策略，可再接入
+- [ ] 自定义 Cookie/Consent 横幅（已暂时取消，采用 GA 官方方案）
+- [x] 隐私政策：加入 Google AdSense 必需条款（第三方 Cookie、个性化广告、Ads Settings / aboutads.info 退订链接、第三方网络说明）
 - [ ] 广告位策略（上线后再开）：
   - [ ] 避免首屏遮挡与误触；
   - [ ] 不影响主要任务流；
@@ -181,6 +185,16 @@
 - [x] 法务页完善：Privacy、Terms、Disclaimer 文案（已按金融语境调整，终稿校对完成）
 
 验收标准：事件在 GA 中可见；页面无诱导性内容；法务文本完整明确。
+
+### AdSense 审核自检（新增）
+
+- [x] 隐私政策：包含第三方 Cookie、个性化广告说明、退订链接（Ads Settings / aboutads.info）、第三方网络声明（将来列出）
+- [x] Consent Mode v2 默认拒绝 + 同意横幅（不遮挡主要任务流）
+- [x] ads.txt 与域名对应
+- [x] 首页：HowTo/FAQ 含结构化数据，FAQ SSR，避免“空壳页”
+- [x] Terms/Privacy 设为 noindex，避免薄内容干扰
+- [x] 联系方式：support@mycdcalc.com 已加入 Terms/Privacy 联系段落与可点击 mailto 链接
+- [x] Methodology/Calculation Notes：公开计算假设与舍入规则，增强可信度
 
 ---
 

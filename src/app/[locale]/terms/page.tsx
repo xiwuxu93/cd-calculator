@@ -127,6 +127,14 @@ export default async function TermsPage({ params }: PageProps) {
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-gray-900">{terms('contactTitle')}</h2>
               <p className="text-gray-700">{terms('contactContent')}</p>
+              <p className="text-gray-700">
+                <a
+                  href="mailto:support@mycdcalc.com"
+                  className="text-blue-700 underline hover:text-blue-900"
+                >
+                  support@mycdcalc.com
+                </a>
+              </p>
             </section>
 
             <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-700">

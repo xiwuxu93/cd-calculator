@@ -69,8 +69,9 @@ const es = {
         "Calculadora de intereses de certificados de depósito gratuita y precisa con un diseño limpio y optimizado para dispositivos móviles.",
       legalSection: "Legal",
       resourcesSection: "Recursos",
-      home: "Hogar",
-      getStarted: "Comienza",
+      home: "Inicio",
+      getStarted: "Comenzar",
+      about: "Acerca de / Contacto",
     },
   },
   header: {
@@ -84,6 +85,19 @@ const es = {
     resourcesSection: "Recursos",
     home: "Hogar",
     getStarted: "Comienza",
+  },
+  about: {
+    title: "Acerca de / Contacto",
+    description: "Quiénes somos, cómo funciona la calculadora y cómo contactarnos.",
+    missionTitle: "Misión",
+    missionContent:
+      "Ofrecer una calculadora de intereses de CD sencilla, precisa y móvil primero, con metodología transparente y privacidad por defecto.",
+    methodologyTitle: "Metodología (Resumen)",
+    methodologyContent:
+      "- Fórmula de capitalización: M = P × (1 + r/m)^(m×t)\n\n- Conversión APR → TAE según la frecuencia de capitalización seleccionada\n\n- Moneda redondeada al céntimo; rendimientos con dos decimales\n\n- Períodos fraccionarios para plazos no enteros\n\n- Calendario derivado período a período; puede diferir ligeramente de los extractos bancarios",
+    contactTitle: "Contacto",
+    contactContent: "¿Preguntas, comentarios o correcciones? Escribe a nuestro equipo:",
+    backToHome: "Volver al inicio",
   },
   calculator: {
     title: "Calculadora de CD",
@@ -150,7 +164,10 @@ const es = {
       "Capital inicial P = $10,000; TAE = 5.00%; Plazo = 12 meses; Capitalización = Mensual.\n\n- n = 12; r = (1 + 0.05)^(1/12) - 1 ≈ 0.004074\n\n- períodos = (12 / 12) * 12 = 12\n\n- Vencimiento: M = 10000 * (1 + 0.004074)^12 ≈ $10,511.62\n\n- Interés: I ≈ $511.62\n\nNota: La capitalización diaria generaría un rendimiento ligeramente superior, pero la TAE ya lo refleja.\n\n",
     pitfallsTitle: "Errores comunes",
     pitfallsContent:
-      "- TAE vs. TAE anual: La TAE incluye la capitalización y es adecuada para los certificados de depósito.\n\n- Meses/años parciales: Calculamos el importe prorrateado utilizando períodos fraccionarios para una estimación más precisa.\n\n- Capitalización diaria: Los resultados reales pueden variar ligeramente; la TAE compensa la mayoría de las diferencias.\n\n- Impuestos y penalizaciones: Esta herramienta muestra estimaciones antes de impuestos y excluye las penalizaciones por retiro anticipado.",
+      "- TAE vs. APR: La TAE incluye la capitalización y es adecuada para los certificados de depósito.\n\n- Meses/años parciales: Prorrateamos utilizando períodos fraccionarios para una estimación más precisa.\n\n- Capitalización diaria: Los resultados reales pueden variar ligeramente; la TAE normaliza la mayoría de las diferencias.\n\n- Impuestos y penalizaciones: Esta herramienta muestra estimaciones antes de impuestos y excluye las penalizaciones por retiro anticipado.",
+    methodologyTitle: "Metodología y notas de cálculo",
+    methodologyContent:
+      "- Fórmula de capitalización: M = P × (1 + r/m)^(m×t), con la TAE normalizada a la frecuencia.\n\n- APR → TAE: Cuando se selecciona el modo APR, convertimos a TAE usando la frecuencia de capitalización elegida.\n\n- Redondeo: Los importes monetarios se redondean al céntimo más cercano; las tasas se muestran con dos decimales por defecto.\n\n- Períodos fraccionarios: Para plazos no enteros usamos exponentes fraccionarios en la capitalización.\n\n- Calendario: La tabla de devengo se deriva período a período y puede diferir ligeramente de los extractos bancarios.\n\n- Impuestos: Las cifras después de impuestos usan su tasa como estimación simple y no constituyen asesoramiento fiscal.",
     penaltyHowToTitle: "Retiro anticipado: ¿Deberías retirar tu dinero?",
     penaltyHowToContent:
       "1) Calcula tus ganancias hasta el momento y la penalización según la política de tu banco (por ejemplo, 3 o 6 meses de intereses).\n\n2) Calcula el interés neto (ganancias menos penalización) y el monto de tu reembolso.\n\n3) Para el plazo restante, calcula la TAE de equilibrio: si la TAE de un nuevo certificado de depósito supera este valor, podría ser conveniente cambiar de banco. De lo contrario, probablemente obtendrás una mayor rentabilidad manteniendo el depósito actual.\n\nConsejo: Las penalizaciones suelen basarse en los intereses, no en el capital; nuestra calculadora ofrece una aproximación de las políticas típicas.",
@@ -213,7 +230,7 @@ const es = {
       "Estamos configurando el motor de cálculo y las entradas adaptadas a dispositivos móviles.",
   },
   privacy: {
-    title: "política de privacidad",
+    title: "Política de privacidad",
     description:
       "Aprenda cómo gestionamos y protegemos sus datos cuando utiliza la Calculadora de CD.",
     intro:
@@ -226,16 +243,33 @@ const es = {
       "Podemos utilizar análisis que respetan la privacidad para observar el uso agregado (por ejemplo, clics en el botón de la calculadora). Estos análisis nunca contienen identificadores personales ni los valores que usted ingrese. Si lo prefiere, puede usar los controles o extensiones de su navegador para limitar los análisis.",
     cookiesTitle: "Galletas",
     cookiesContent:
-      "Este sitio no utiliza cookies de seguimiento. Su navegador puede almacenar en caché algunos archivos para mejorar el rendimiento, los cuales puede borrar en cualquier momento.",
+      "Utilizamos Google Consent Mode para que las cookies de publicidad y analítica permanezcan denegadas por defecto hasta que usted otorgue su consentimiento.",
     thirdPartiesTitle: "Servicios de terceros",
     thirdPartiesContent:
-      "Si se utilizan recursos de terceros (por ejemplo, fuentes o herramientas de análisis), se eligen teniendo en cuenta la privacidad. Cualquier incorporación futura (incluida la monetización mediante Google AdSense) se documentará aquí, y la publicidad no interferirá con el uso principal de la calculadora.",
+      "Si se utilizan recursos de terceros (por ejemplo, fuentes, analítica o anuncios), se eligen teniendo en cuenta la privacidad. La colocación de anuncios no interferirá con el uso principal de la calculadora.",
+    adsTitle: "Publicidad y Google AdSense",
+    adsVendorContent:
+      "Los proveedores externos, incluido Google, utilizan cookies para mostrar anuncios en función de las visitas previas del usuario a este u otros sitios web.",
+    adsPersonalizedContent:
+      "El uso de cookies publicitarias por parte de Google permite a Google y a sus socios mostrar anuncios basados en su visita a nuestros sitios y/o a otros sitios de Internet.",
+    adsOptOutIntro:
+      "Puede inhabilitar la publicidad personalizada en la Configuración de Anuncios de Google o inhabilitar el uso de cookies para publicidad personalizada de algunos proveedores en aboutads.info.",
+    adsOtherVendorsContent:
+      "Si no inhabilitamos la publicación de anuncios de terceros, las cookies de otros proveedores o redes publicitarias también pueden utilizarse para mostrar anuncios en este sitio. Enumeraremos dichos proveedores y proporcionaremos enlaces de inhabilitación cuando corresponda.",
     changesTitle: "Actualizaciones de políticas",
     changesContent:
       "Es posible que actualicemos esta política para reflejar cambios en el producto o requisitos legales. Las actualizaciones importantes se comunicarán claramente en esta página.",
     contactTitle: "Contacto",
     contactContent:
-      "Si tiene preguntas sobre privacidad, póngase en contacto con nosotros.",
+      "Si tiene preguntas o solicitudes sobre privacidad, escríbanos a support@mycdcalc.com.",
+  },
+  consent: {
+    title: "Usamos cookies para anuncios y analítica",
+    desc:
+      "Con su permiso, utilizamos cookies para admitir Google AdSense y analítica básica. Puede revisar los detalles en nuestra Política de privacidad.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    learnMore: "Más información",
   },
   terms: {
     title: "Condiciones del servicio",
@@ -260,7 +294,7 @@ const es = {
       "Podemos actualizar estas condiciones periódicamente. El uso continuado tras la entrada en vigor de los cambios implica la aceptación de las nuevas condiciones.",
     contactTitle: "Contacto",
     contactContent:
-      "¿Tienes alguna pregunta sobre estos términos? Contáctanos.",
+      "¿Preguntas sobre estos términos? Envíe un correo a support@mycdcalc.com.",
   },
   disclaimer: {
     title: "Descargo de responsabilidad",

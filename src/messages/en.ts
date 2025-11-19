@@ -1,4 +1,12 @@
 const en = {
+  consent: {
+    title: "We use cookies for ads and analytics",
+    desc:
+      "With your permission, we use cookies to support Google AdSense and basic analytics. You can review details in our Privacy Policy.",
+    accept: "Accept",
+    reject: "Reject",
+    learnMore: "Learn more",
+  },
   metadata: {
     title: "CD Calculator - Free Certificate of Deposit Interest Calculator",
     description: "Calculate CD interest, total maturity value, and effective annual yield in seconds. Clean, accurate, mobile-friendly.",
@@ -64,6 +72,7 @@ const en = {
       resourcesSection: "Resources",
       home: "Home",
       getStarted: "Get Started",
+      about: "About / Contact",
     },
   },
   header: {
@@ -76,6 +85,7 @@ const en = {
     resourcesSection: "Resources",
     home: "Home",
     getStarted: "Get Started",
+    about: "About / Contact",
   },
   calculator: {
     title: "CD Calculator",
@@ -159,6 +169,15 @@ Note: Daily compounding would yield slightly more, but APY already summarizes co
 - Daily compounding: Actual results may differ slightly; APY normalizes most differences.
 - Taxes and penalties: This tool shows pre-tax estimates and excludes early withdrawal penalties.
 `,
+    methodologyTitle: "Methodology & Calculation Notes",
+    methodologyContent: `
+- Compounding formula: M = P × (1 + r/m)^(m×t), with APY normalized to frequency.
+- APR → APY: When APR mode is selected, we convert to APY using the chosen compounding frequency.
+- Rounding: Monetary values round to the nearest cent; rates shown to two decimals by default.
+- Fractional periods: For non-integer terms, we use fractional exponents for compounding.
+- Schedule: The accrual schedule is derived period-by-period and may differ slightly from bank statements.
+- Taxes: After-tax figures use your input tax rate as a simple estimate and are not tax advice.
+`,
     penaltyHowToTitle: "Early Withdrawal: Should You Cash Out?",
     penaltyHowToContent: `
 1) Estimate what you've earned so far and the penalty per your bank's policy (e.g., 3 or 6 months of interest).
@@ -207,6 +226,19 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     placeholderTitle: "CD Calculator UI Coming Next",
     placeholderDescription: "We’re setting up the calculation engine and mobile-first inputs.",
   },
+  about: {
+    title: "About / Contact",
+    description: "Who we are, how the calculator works, and how to reach us.",
+    missionTitle: "Mission",
+    missionContent:
+      "Provide a clean, accurate, and mobile-first CD interest calculator with transparent methodology and strong privacy by default.",
+    methodologyTitle: "Methodology (Summary)",
+    methodologyContent:
+      "- Compounding formula: M = P × (1 + r/m)^(m×t)\n\n- APR → APY conversion by selected compounding frequency\n\n- Currency rounded to nearest cent; yields to two decimals\n\n- Fractional periods for non-integer terms\n\n- Schedule derived period-by-period; may differ slightly from bank statements",
+    contactTitle: "Contact",
+    contactContent: "Questions, feedback, or corrections? Email our team:",
+    backToHome: "Back to Home",
+  },
   privacy: {
     title: "Privacy Policy",
     description: "Learn how we handle and protect your data when using the CD Calculator.",
@@ -216,13 +248,22 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     analyticsTitle: "Analytics",
     analyticsContent: "We may use privacy-friendly analytics to observe aggregate usage (e.g., calculator button clicks). These analytics never contain personal identifiers or your input values. You can use browser controls or extensions to limit analytics if you prefer.",
     cookiesTitle: "Cookies",
-    cookiesContent: "The site does not set tracking cookies. Your browser may cache assets to improve performance, which you can clear at any time.",
+    cookiesContent: "We use Google Consent Mode so that advertising and analytics cookies remain denied by default until you grant consent.",
     thirdPartiesTitle: "Third-Party Services",
-    thirdPartiesContent: "If third-party resources (e.g., fonts or analytics) are used, they are chosen for privacy. Any future additions (including monetization like Google AdSense) will be documented here, and ad placement will not obstruct core calculator usage.",
+    thirdPartiesContent: "If third-party resources (e.g., fonts, analytics, or ads) are used, they are chosen with privacy in mind. Ad placement will not obstruct core calculator usage.",
+    adsTitle: "Advertising and Google AdSense",
+    adsVendorContent:
+      "Third‑party vendors, including Google, use cookies to serve ads based on a user's prior visits to this or other websites.",
+    adsPersonalizedContent:
+      "Google's use of advertising cookies enables Google and its partners to serve ads to you based on your visit to our sites and/or other sites on the Internet.",
+    adsOptOutIntro:
+      "You can opt out of personalized advertising via Google's Ads Settings, or opt out of some third‑party vendors' uses of cookies for personalized advertising at aboutads.info.",
+    adsOtherVendorsContent:
+      "If we do not opt out of third‑party ad serving, the cookies of other third‑party vendors or ad networks may also be used to serve ads on this site. We will list such vendors and provide opt‑out links when applicable.",
     changesTitle: "Policy Updates",
     changesContent: "We may update this policy to reflect product changes or legal requirements. Significant updates will be clearly communicated on this page.",
     contactTitle: "Contact",
-    contactContent: "Reach out for questions about privacy.",
+    contactContent: "For privacy questions or requests, contact us at support@mycdcalc.com.",
   },
   terms: {
     title: "Terms of Service",
@@ -239,7 +280,7 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     changesTitle: "Changes to Terms",
     changesContent: "We may update these terms periodically. Continued use after changes take effect constitutes acceptance of the new terms.",
     contactTitle: "Contact",
-    contactContent: "Have questions about these terms? Contact us.",
+    contactContent: "Questions about these terms? Email support@mycdcalc.com.",
   },
   disclaimer: {
     title: "Disclaimer",

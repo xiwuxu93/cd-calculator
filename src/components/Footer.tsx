@@ -59,6 +59,11 @@ export default async function Footer() {
                   {t('footer.getStarted')}
                 </a>
               </li>
+              <li>
+                <Link href={withPrefix('/about')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.about')}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

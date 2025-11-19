@@ -120,6 +120,37 @@ export default async function PrivacyPolicyPage({ params }: PageProps) {
             </section>
 
             <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-gray-900">{privacy('adsTitle')}</h2>
+              <ul className="list-disc space-y-2 pl-6 text-gray-700">
+                <li>{privacy('adsVendorContent')}</li>
+                <li>{privacy('adsPersonalizedContent')}</li>
+                <li>
+                  {privacy('adsOptOutIntro')}{' '}
+                  (
+                  <a
+                    href="https://adssettings.google.com"
+                    className="text-blue-700 underline hover:text-blue-900"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Ads Settings
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.aboutads.info/"
+                    className="text-blue-700 underline hover:text-blue-900"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    aboutads.info
+                  </a>
+                  )
+                </li>
+                <li>{privacy('adsOtherVendorsContent')}</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
               <h2 className="text-xl font-semibold text-gray-900">{privacy('changesTitle')}</h2>
               <p className="text-gray-700">{privacy('changesContent')}</p>
             </section>
@@ -127,6 +158,14 @@ export default async function PrivacyPolicyPage({ params }: PageProps) {
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-gray-900">{privacy('contactTitle')}</h2>
               <p className="text-gray-700">{privacy('contactContent')}</p>
+              <p className="text-gray-700">
+                <a
+                  href="mailto:support@mycdcalc.com"
+                  className="text-blue-700 underline hover:text-blue-900"
+                >
+                  support@mycdcalc.com
+                </a>
+              </p>
             </section>
 
             <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-700">

@@ -140,6 +140,10 @@ ${home('technicalContent')}
 
 ${home('pitfallsContent')}
 
+## ${home('methodologyTitle')}
+
+${home('methodologyContent')}
+
 ## ${home('penaltyHowToTitle')}
 
 ${home('penaltyHowToContent')}

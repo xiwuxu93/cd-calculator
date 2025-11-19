@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { Locale, resolveLocale } from '@/lib/i18n';
