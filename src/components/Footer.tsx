@@ -6,6 +6,24 @@ import { defaultLocale } from '@/lib/i18n';
 const getLocalePrefix = (locale: string, fallbackLocale: string) =>
   locale === fallbackLocale ? '' : `/${locale}`;
 
+type PartnerLink = {
+  name: string;
+  href: string;
+  badgeSrc?: string;
+  badgeAlt?: string;
+  badgeHeight?: number;
+};
+
+const partnerLinks: PartnerLink[] = [
+  {
+    name: 'Appa List',
+    href: 'https://appalist.com',
+    badgeSrc: 'https://appalist.com/assets/images/badge.png',
+    badgeAlt: 'Appa List',
+    badgeHeight: 54,
+  },
+];
+
 export default async function Footer() {
   const [t, locale] = await Promise.all([getTranslations('common'), getLocale()]);
   const basePath = getLocalePrefix(locale, defaultLocale);
@@ -70,9 +88,41 @@ export default async function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200">
-          <p className="text-center text-sm text-gray-500">
-            © <CurrentYear /> {t('siteName')}. {t('allRightsReserved')}
-          </p>
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-500 md:flex-row">
+            <p className="text-center md:text-left">
+              © <CurrentYear /> {t('siteName')}. {t('allRightsReserved')}
+            </p>
+            {partnerLinks.length > 0 && (
+              <div className="flex items-center justify-center">
+                <ul className="flex flex-wrap items-center justify-center gap-4">
+                  {partnerLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.name}
+                        className="inline-flex items-center justify-center"
+                      >
+                        {link.badgeSrc ? (
+                          <img
+                            src={link.badgeSrc}
+                            alt={link.badgeAlt || link.name}
+                            height={link.badgeHeight ?? 54}
+                            className="h-14 w-auto"
+                          />
+                        ) : (
+                          <span className="text-gray-600 hover:text-gray-900 transition">
+                            {link.name}
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </footer>
