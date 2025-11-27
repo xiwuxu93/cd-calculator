@@ -22,6 +22,13 @@ const partnerLinks: PartnerLink[] = [
     badgeAlt: 'Appa List',
     badgeHeight: 54,
   },
+  {
+    name: 'Hunt for Tools',
+    href: 'https://huntfortools.com',
+    badgeSrc: 'https://huntfortools.com/assets/images/badge.png',
+    badgeAlt: 'Hunt for Tools',
+    badgeHeight: 54,
+  },
 ];
 
 export default async function Footer() {
