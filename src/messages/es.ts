@@ -138,11 +138,21 @@ const es = {
       brandDescription:
         "Calculadora de intereses de certificados de depósito gratuita y precisa con un diseño limpio y optimizado para dispositivos móviles.",
       legalSection: "Legal",
-      resourcesSection: "Recursos",
+      calculatorsSection: "Calculadoras",
+      learnSection: "Aprender",
       home: "Inicio",
-      getStarted: "Comenzar",
       about: "Acerca de / Contacto",
+      penaltyCalculator: "Penalización por Retiro",
+      ladderCalculator: "Escalera de CD",
+      sixMonthCalculator: "Calculadora CD 6 Meses",
+      oneYearCalculator: "Calculadora CD 1 Año",
+      howToCalculate: "Cómo Calcular Intereses",
     },
+  },
+  navigation: {
+    tools: "Herramientas",
+    learn: "Aprender",
+    calculators: "Calculadoras",
   },
   header: {
     siteName: "Calculadora de CD",

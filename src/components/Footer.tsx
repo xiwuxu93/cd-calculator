@@ -55,9 +55,9 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Calculators Links */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">{t('footer.resourcesSection')}</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">{t('footer.calculatorsSection')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href={withPrefix('/')} className="text-gray-600 hover:text-gray-900 transition">
@@ -65,9 +65,36 @@ export default async function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#main-content" className="text-gray-600 hover:text-gray-900 transition">
-                  {t('footer.getStarted')}
-                </a>
+                <Link href={withPrefix('/early-withdrawal-penalty-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.penaltyCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/cd-ladder-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.ladderCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/6-month-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.sixMonthCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/1-year-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.oneYearCalculator')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Learn Links */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-3">{t('footer.learnSection')}</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href={withPrefix('/how-to-calculate-cd-interest')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.howToCalculate')}
+                </Link>
               </li>
               <li>
                 <Link href={withPrefix('/about')} className="text-gray-600 hover:text-gray-900 transition">

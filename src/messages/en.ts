@@ -139,11 +139,21 @@ const en = {
     footer: {
       brandDescription: "Free, accurate CD interest calculator with clean, mobile-first design.",
       legalSection: "Legal",
-      resourcesSection: "Resources",
+      calculatorsSection: "Calculators",
+      learnSection: "Learn",
       home: "Home",
-      getStarted: "Get Started",
       about: "About / Contact",
+      penaltyCalculator: "Early Withdrawal Penalty",
+      ladderCalculator: "CD Ladder Calculator",
+      sixMonthCalculator: "6-Month CD Calculator",
+      oneYearCalculator: "1-Year CD Calculator",
+      howToCalculate: "How to Calculate CD Interest",
     },
+  },
+  navigation: {
+    tools: "Tools",
+    learn: "Learn",
+    calculators: "Calculators",
   },
   header: {
     siteName: "CD Calculator",
