@@ -14,22 +14,7 @@ type PartnerLink = {
   badgeHeight?: number;
 };
 
-const partnerLinks: PartnerLink[] = [
-  {
-    name: 'Appa List',
-    href: 'https://appalist.com',
-    badgeSrc: 'https://appalist.com/assets/images/badge.png',
-    badgeAlt: 'Appa List',
-    badgeHeight: 54,
-  },
-  {
-    name: 'Hunt for Tools',
-    href: 'https://huntfortools.com',
-    badgeSrc: 'https://huntfortools.com/assets/images/badge.png',
-    badgeAlt: 'Hunt for Tools',
-    badgeHeight: 54,
-  },
-];
+const partnerLinks: PartnerLink[] = [];
 
 export default async function Footer() {
   const [t, locale] = await Promise.all([getTranslations('common'), getLocale()]);
@@ -107,7 +92,7 @@ export default async function Footer() {
                       <a
                         href={link.href}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         aria-label={link.name}
                         className="inline-flex items-center justify-center"
                       >
