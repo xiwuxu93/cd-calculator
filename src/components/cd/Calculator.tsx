@@ -13,13 +13,19 @@ function parseNumber(value: string): number | null {
   return Number.isFinite(num) ? num : null;
 }
 
-export default function CDCalculator() {
+type CDCalculatorProps = {
+  initialTerm?: number;
+  initialPrincipal?: number;
+  initialApy?: number;
+};
+
+export default function CDCalculator({ initialTerm = 12, initialPrincipal = 10000, initialApy = 5.00 }: CDCalculatorProps = {}) {
   const t = useTranslations('calculator');
 
-  const [principalStr, setPrincipalStr] = useState('10000');
-  const [rateStr, setRateStr] = useState('5.00');
+  const [principalStr, setPrincipalStr] = useState(String(initialPrincipal));
+  const [rateStr, setRateStr] = useState(initialApy.toFixed(2));
   const [rateMode, setRateMode] = useState<'apy' | 'nominal'>('apy');
-  const [termStr, setTermStr] = useState('12');
+  const [termStr, setTermStr] = useState(String(initialTerm));
   const [compounding, setCompounding] = useState<Compounding>('monthly');
   const [errors, setErrors] = useState<{ principal?: string; apy?: string; term?: string }>({});
   const [showAfterTax, setShowAfterTax] = useState(false);
