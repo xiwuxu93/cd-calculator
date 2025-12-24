@@ -51,7 +51,7 @@ const en = {
     howToTitle: "How Penalties Are Calculated",
     howToContent: "Banks often charge a fee based on simple interest. For example, a 6-month interest penalty means you forfeit the interest you would have earned in 6 months. If you haven't earned enough interest yet, the penalty might eat into your principal.",
     strategiesTitle: "Strategies to Avoid Penalties",
-    strategiesContent: "1. **CD Laddering:** Split your investment across multiple terms so funds mature regularly.\\n2. **No-Penalty CDs:** Choose CDs that allow penalty-free withdrawals (usually with slightly lower rates).\\n3. **Wait it out:** If the break-even APY is too high, it might be better to keep your current CD.",
+    strategiesContent: "1. **CD Laddering:** Split your investment across multiple terms so funds mature regularly.\n2. **No-Penalty CDs:** Choose CDs that allow penalty-free withdrawals (usually with slightly lower rates).\n3. **Wait it out:** If the break-even APY is too high, it might be better to keep your current CD.",
   },
   ladder: {
     totalInvestment: "Total Investment",

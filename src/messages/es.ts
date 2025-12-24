@@ -49,7 +49,7 @@ const es = {
     howToTitle: "Cómo se calculan las penalizaciones",
     howToContent: "Los bancos a menudo cobran una tarifa basada en el interés simple. Por ejemplo, una penalización de 6 meses de interés significa que pierde el interés que habría ganado en 6 meses. Si no ha ganado suficiente interés aún, la penalización podría afectar su capital inicial.",
     strategiesTitle: "Estrategias para evitar penalizaciones",
-    strategiesContent: "1. **Escalera de CD:** Divida su inversión en múltiples plazos para que los fondos venzan regularmente.\\n2. **CD sin penalización:** Elija CDs que permitan retiros sin penalización (generalmente con tasas ligeramente más bajas).\\n3. **Esperar:** Si el TAE de equilibrio es demasiado alto, puede ser mejor mantener su CD actual.",
+    strategiesContent: "1. **Escalera de CD:** Divida su inversión en múltiples plazos para que los fondos venzan regularmente.\n2. **CD sin penalización:** Elija CDs que permitan retiros sin penalización (generalmente con tasas ligeramente más bajas).\n3. **Esperar:** Si el TAE de equilibrio es demasiado alto, puede ser mejor mantener su CD actual.",
   },
   ladder: {
     totalInvestment: "Inversión Total",
