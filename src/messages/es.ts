@@ -5,7 +5,7 @@ const es = {
     description:
       "Calcula en segundos el interés, el valor total al vencimiento y la rentabilidad anual efectiva de tu certificado de depósito. Sencillo, preciso y compatible con dispositivos móviles.",
     keywords:
-      "Calculadora de certificados de depósito, calculadora de intereses de certificados de depósito, calculadora de TAE de certificados de depósito",
+      "Calculadora de certificados de depósito, calculadora de intereses de certificados de depósito, calculadora de TAE de certificados de depósito, capitalización diaria, capitalización mensual, calculadora de ahorros",
     siteName: "Calculadora de CD",
   },
   penalty: {
@@ -41,7 +41,7 @@ const es = {
     },
   },
   penaltyPage: {
-    title: "Calculadora de penalización por retiro anticipado de CD",
+    title: "Calculadora de penalización por retiro anticipado de CD - Calcule cargos e intereses",
     description: "Calcule el costo exacto de cancelar su CD antes de tiempo. Compare penalizaciones, intereses netos y tasas de equilibrio para decidir si vale la pena cambiar.",
     keywords: "calculadora penalizacion cd, retiro anticipado cd, penalidad certificado deposito",
     aboutTitle: "Sobre las penalizaciones por retiro anticipado",
@@ -64,7 +64,7 @@ const es = {
     invested: "Invertido",
   },
   ladderPage: {
-    title: "Calculadora de Escalera de CD - Estrategia de Alto Rendimiento",
+    title: "Calculadora de Escalera de CD - Construya su estrategia de ahorros",
     description: "Visualice su estrategia de escalera de CD. Calcule el TAE combinado, el interés total y el calendario de liquidez para maximizar los rendimientos manteniendo el efectivo accesible.",
     keywords: "calculadora escalera cd, estrategia escalera cd, certificado deposito escalonado",
     aboutTitle: "¿Qué es una Escalera de CD?",
@@ -95,20 +95,30 @@ const es = {
     excelContent: "Puede calcular el valor futuro de un CD usando la función `VF` (o `FV` en inglés):",
     excelFormula: "=VF(tasa/n, n*años, 0, -principal)",
     excelExample: "=VF(0.05/12, 12*1, 0, -10000)",
+    compoundingTitle: "Capitalización Diaria vs. Mensual",
+    compoundingContent: "La frecuencia de capitalización es la rapidez con la que se suman los intereses a su capital. La **capitalización diaria** (365 veces al año) genera un poco más de interés que la **capitalización mensual** (12 veces al año). La mayoría de los CD modernos de alto rendimiento utilizan la capitalización diaria para maximizar los rendimientos. Nuestra calculadora admite todas las frecuencias estándar para garantizar la precisión.",
   },
   sixMonthPage: {
-    title: "Calculadora de CD de 6 Meses",
+    title: "Calculadora de CD de 6 Meses - Estime ganancias a corto plazo",
     description: "Calcule sus ganancias para un Certificado de Depósito de 6 meses. Compare tasas de CD a corto plazo y vea cuánto interés puede ganar.",
     keywords: "calculadora cd 6 meses, tasas cd 6 meses, calculadora cd corto plazo",
     aboutTitle: "Sobre los CD de 6 Meses",
     aboutContent: "Un CD de 6 meses es un excelente vehículo de ahorro a corto plazo. Bloquea su dinero por medio año, ofreciendo típicamente tasas más altas que una cuenta de ahorros regular sin atar su efectivo por mucho tiempo.",
+    howItWorksTitle: "Cómo funciona un CD de 6 meses",
+    howItWorksContent: "Cuando abre un CD de 6 meses, acepta dejar su depósito intacto durante exactamente seis meses. A cambio, el banco proporciona una tasa de interés fija garantizada. Esto es ideal para dinero que sabe que necesitará en un futuro cercano, como para una boda, un pago inicial o unas vacaciones planificadas.",
+    advantagesTitle: "Ventajas de los CD de 6 meses",
+    advantagesContent: "- **Tasas más altas:** Generalmente supera a las cuentas de ahorro estándar.\n- **Bajo riesgo:** Rendimientos fijos protegidos por el seguro de la FDIC.\n- **Compromiso corto:** Solo 6 meses, proporcionando mejor liquidez que los plazos de 1 o 5 años.",
   },
   oneYearPage: {
-    title: "Calculadora de CD de 1 Año",
+    title: "Calculadora de CD de 1 Año - Maximice sus rendimientos a 12 meses",
     description: "Estime sus retornos de CD de 1 año. Vea cuánto puede ganar una tasa fija de 12 meses en comparación con una cuenta de ahorros.",
     keywords: "calculadora cd 1 año, calculadora cd 12 meses, tasas cd 1 año",
     aboutTitle: "Sobre los CD de 1 Año",
     aboutContent: "El CD de 1 año (o 12 meses) es uno de los plazos más populares. A menudo ofrece un punto ideal competitivo entre tasas altas y liquidez razonable.",
+    howItWorksTitle: "Cómo funciona un CD de 1 año",
+    howItWorksContent: "Un CD de 1 año requiere que comprometa sus fondos durante 12 meses. Debido a que está bloqueando su dinero por más tiempo que un plazo de 3 o 6 meses, los bancos suelen ofrecer un APY más alto. Es un componente central para cualquier estrategia de escalera de CD.",
+    advantagesTitle: "¿Por qué elegir un CD de 1 año?",
+    advantagesContent: "- **Retorno Garantizado:** Asegure una tasa alta hoy incluso si las tasas del mercado bajan más adelante este año.\n- **Seguridad:** Su capital e intereses están garantizados.\n- **Plazo Estándar:** Casi todos los bancos ofrecen promociones especiales para plazos de 12 meses, lo que facilita encontrar excelentes tasas.",
   },
   locales: {
     en: {
@@ -228,7 +238,7 @@ const es = {
     backToTop: "Volver al inicio",
     aboutTitle: "Acerca de esta calculadora",
     aboutContent:
-      "Utilice esta calculadora gratuita de intereses de certificados de depósito para estimar el valor de vencimiento según el capital, la TAE, el plazo y la frecuencia de capitalización. Todos los cálculos se realizan localmente en su navegador.",
+      "Utilice esta calculadora gratuita de intereses de certificados de depósito para estimar el valor de vencimiento según el capital, la TAE, el plazo y la frecuencia de capitalización. Soporta capitalización diaria, capitalización mensual y más para asegurar que sus cálculos sean precisos.",
     howToUseTitle: "Cómo calcular los intereses de un certificado de depósito",
     howToUseStep1:
       "Ingrese su depósito inicial (capital), TAE, plazo en meses y capitalización (mensual/trimestral/anual).",
@@ -264,9 +274,8 @@ const es = {
     whyUseSimpleDesc: "Interfaz de usuario limpia y optimizada para móviles",
     whyUseMobile: "Compatible con dispositivos móviles",
     whyUseMobileDesc: "Optimizado para pantallas pequeñas y táctiles",
-    technicalTitle: "¿Qué se calcula?",
-    technicalContent:
-      "Estimamos el valor al vencimiento utilizando su TAE y la frecuencia de capitalización. Para los meses con números no enteros, el cálculo prorratea el último período. Los resultados se redondean al céntimo más cercano para mayor claridad.",
+    technicalTitle: "Soporte de capitalización diaria vs. mensual",
+    technicalContent: "Estimamos el valor al vencimiento utilizando su TAE y la frecuencia de capitalización. Nuestro motor maneja correctamente la lógica de **capitalización diaria**, **capitalización mensual** y **capitalización trimestral** para que coincida con sus estados bancarios. Para meses no enteros, el cálculo prorratea el último período. Los resultados se redondean al céntimo más cercano para mayor claridad.",
     faqTitle: "Calculadora de CD: Preguntas frecuentes",
     faqQ1: "¿Qué es el APY y cómo afecta a mi certificado de depósito?",
     faqA1:
@@ -293,20 +302,29 @@ const es = {
       "¿Cómo afectan los impuestos a la rentabilidad de mis certificados de depósito?",
     faqA8:
       "Esta calculadora muestra estimaciones antes de impuestos. El rendimiento real después de impuestos depende de su situación fiscal. Consulte a un asesor fiscal.",
-    faqQ9: "¿Qué ocurre si mi cuenta bancaria capitaliza diariamente?",
-    faqA9:
-      "La TAE ya tiene en cuenta la capitalización. Seleccionar la opción mensual proporciona una estimación bastante precisa para la mayoría de los certificados de depósito. La capitalización diaria ofrece resultados ligeramente superiores.",
+    faqQ9: "¿Esta calculadora de CD admite capitalización diaria o mensual?",
+    faqA9: "¡Sí! Esta calculadora de CD admite capitalización diaria, mensual, trimestral y anual. Elegir la frecuencia de capitalización correcta asegura que sus resultados y el calendario de acumulación coincidan exactamente con los cálculos de su banco.",
     faqQ10: "¿Puedo exportar o compartir mis resultados?",
     faqA10:
       "Todavía no. Planeamos añadir opciones de copia y exportación si aportan un valor claro sin sobrecargar la interfaz.",
+    exploreToolsTitle: "Explorar más herramientas de CD",
+    exploreToolsDescription: "Calculadoras avanzadas para estrategias de ahorro más inteligentes.",
+    toolPenalty: "Penalización por retiro",
+    toolPenaltyDesc: "Calcule las tarifas por cancelar un CD.",
+    toolLadder: "Calculadora de Escalera",
+    toolLadderDesc: "Construya una estrategia para tasas altas y liquidez.",
+    toolSixMonth: "CD de 6 Meses",
+    toolOneYear: "CD de 1 Año",
     ctaTitle:
       "¿Listo para calcular los intereses de tu certificado de depósito?",
     ctaDescription:
       "Ingrese su depósito, TAE y plazo para ver el valor de vencimiento.",
-    ctaButton: "Calcula ahora",
-    placeholderTitle:
-      "Próximamente: Interfaz de usuario de la calculadora de CD",
-    placeholderDescription:
+        ctaButton: "Calcula ahora",
+        bankSectionTitle: "Compatible con los principales bancos de EE. UU.",
+            bankSectionContent: "Nuestra calculadora está diseñada para manejar las frecuencias de capitalización y los plazos ofrecidos por las principales instituciones financieras. Ya sea que tenga un CD con **Navy Federal Credit Union**, **Chase Bank**, **Wells Fargo**, **Bank of America** o **Citibank**, simplemente ingrese su TAE y plazo para verificar sus ganancias por intereses. Admitimos opciones de capitalización diaria, mensual y trimestral utilizadas por estos bancos.",
+            comparisonTitle: "CD vs. Cuenta de Ahorros: ¿Cuál es mejor?",
+            comparisonContent: "¿Decidiendo entre un Certificado de Depósito y una Cuenta de Ahorros de Alto Rendimiento (HYSA)? \n\n - **Rendimientos:** Los CD generalmente ofrecen tasas de interés fijas más altas, mientras que las tasas de ahorro son variables y pueden bajar. \n - **Liquidez:** Las cuentas de ahorro permiten un fácil acceso al efectivo. Los CD requieren que bloquee su dinero durante un plazo determinado para obtener esa tasa premium. \n - **Ideal para:** Use un CD para metas a largo plazo donde desee garantizar su rendimiento. Use una cuenta de ahorros para su fondo de emergencia.",
+            placeholderTitle: "Próximamente: Interfaz de usuario de la calculadora de CD",    placeholderDescription:
       "Estamos configurando el motor de cálculo y las entradas adaptadas a dispositivos móviles.",
   },
   privacy: {

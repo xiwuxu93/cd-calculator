@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CDCalculator from '@/components/cd/Calculator';
 import MarkdownContent from '@/components/MarkdownContent';
+import ToolGrid from '@/components/ToolGrid';
 import CTA from '@/components/CTA';
 import { Locale, defaultLocale, locales } from '@/lib/i18n';
 
@@ -66,6 +67,14 @@ export default async function OneYearPage({ params }: PageProps) {
 ## ${t('aboutTitle')}
 
 ${t('aboutContent')}
+
+## ${t('howItWorksTitle')}
+
+${t('howItWorksContent')}
+
+## ${t('advantagesTitle')}
+
+${t('advantagesContent')}
 `;
 
   return (
@@ -89,6 +98,8 @@ ${t('aboutContent')}
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
           </div>
+
+          <ToolGrid />
 
           <CTA
             title={home('ctaTitle')}

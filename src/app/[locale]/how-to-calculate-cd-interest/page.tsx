@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MarkdownContent from '@/components/MarkdownContent';
 import CDCalculator from '@/components/cd/Calculator';
+import ToolGrid from '@/components/ToolGrid';
 import CTA from '@/components/CTA';
 import { Locale, defaultLocale, locales } from '@/lib/i18n';
 
@@ -94,6 +95,10 @@ ${t('excelContent')}
 \`${t('excelFormula')}\`
 
 ${t('excelExample')}
+
+## ${t('compoundingTitle')}
+
+${t('compoundingContent')}
 `;
 
   return (
@@ -118,6 +123,8 @@ ${t('excelExample')}
              <h3 className="text-2xl font-bold text-center mb-6">Verify with the Calculator</h3>
              <CDCalculator />
           </div>
+
+          <ToolGrid />
 
           <CTA
             title={home('ctaTitle')}

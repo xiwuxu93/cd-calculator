@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import ContentPlaceholder from '@/components/ContentPlaceholder';
 import CDCalculator from '@/components/cd/Calculator';
 import PenaltySection from '@/components/cd/PenaltySection';
+import ToolGrid from '@/components/ToolGrid';
 import MarkdownContent from '@/components/MarkdownContent';
 import CTA from '@/components/CTA';
 import { Locale, defaultLocale, locales } from '@/lib/i18n';
@@ -87,8 +88,19 @@ export default async function HomePage({ params }: PageProps) {
     description: metadata('description'),
     url: SITE_URL,
     inLanguage: locale,
-    applicationCategory: 'WebApplication',
+    applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
+    featureList: [
+      'Daily, Monthly, Quarterly Compounding',
+      'Early Withdrawal Penalty Calculator',
+      'CD Ladder Calculator',
+      'Effective Annual Yield (APY) Calculation'
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
   };
 
   const howToSchema = {
@@ -115,6 +127,14 @@ ${home('aboutContent')}
 1. ${home('howToUseStep1')}
 2. ${home('howToUseStep2')}
 3. ${home('howToUseStep3')}
+
+## ${home('bankSectionTitle')}
+
+${home('bankSectionContent')}
+
+## ${home('comparisonTitle')}
+
+${home('comparisonContent')}
 
 ## ${home('formulaTitle')}
 
@@ -269,6 +289,10 @@ ${home('penaltyHowToContent')}
               dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
           </div>
+          
+          {/* Related Tools Grid */}
+          <ToolGrid />
+
           <div className="mb-12 text-right">
             <a href="#main-content" aria-label="Back to top" className="text-sm text-blue-600 hover:underline">{home('backToTop') ?? 'Back to top'} ↑</a>
           </div>
