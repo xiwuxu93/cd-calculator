@@ -118,7 +118,7 @@ export default async function HomePage({ params }: PageProps) {
 
   // Example markdown content for documentation
   const exampleMarkdown = `
-# ${home('aboutTitle')}
+## ${home('aboutTitle')}
 
 ${home('aboutContent')}
 
@@ -167,6 +167,13 @@ ${home('methodologyContent')}
 ## ${home('penaltyHowToTitle')}
 
 ${home('penaltyHowToContent')}
+
+## ${home('glossaryTitle')}
+
+- ${home('glossaryApy')}
+- ${home('glossaryApr')}
+- ${home('glossaryPrincipal')}
+- ${home('glossaryMaturity')}
 `;
 
   const faqItems = [

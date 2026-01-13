@@ -64,7 +64,7 @@ export default async function HowToPage({ params }: PageProps) {
   const home = await getTranslations({ locale, namespace: 'home' });
 
   const contentMarkdown = `
-# ${t('introTitle')}
+## ${t('introTitle')}
 
 ${t('introContent')}
 

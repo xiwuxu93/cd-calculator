@@ -60,7 +60,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function PenaltyPage({ params }: PageProps) {
   const locale = params.locale as Locale;
   const t = await getTranslations({ locale, namespace: 'penaltyPage' });
+  const nav = await getTranslations({ locale, namespace: 'navigation' });
   const home = await getTranslations({ locale, namespace: 'home' });
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: nav('breadcrumbHome'),
+        item: SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('title'),
+        item: `${SITE_URL}/early-withdrawal-penalty-calculator`,
+      },
+    ],
+  };
 
   const faqItems = [
     {
@@ -129,6 +149,11 @@ ${t('strategiesContent')}
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
           </div>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
 
           <div className="mb-12 bg-white rounded-lg border border-gray-200">
             <div className="px-6 py-8 border-b border-gray-200">

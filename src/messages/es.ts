@@ -1,9 +1,9 @@
 const es = {
   metadata: {
     title:
-      "Calculadora de CD - Calculadora gratuita de intereses de certificados de depósito",
+      "Calculadora de CD - Intereses de Certificados de Depósito",
     description:
-      "Calcula en segundos el interés, el valor total al vencimiento y la rentabilidad anual efectiva de tu certificado de depósito. Sencillo, preciso y compatible con dispositivos móviles.",
+      "Calcula el interés de tu CD, valor al vencimiento y APY en segundos. Herramienta precisa, gratuita y optimizada para móviles.",
     keywords:
       "Calculadora de certificados de depósito, calculadora de intereses de certificados de depósito, calculadora de TAE de certificados de depósito, capitalización diaria, capitalización mensual, calculadora de ahorros",
     siteName: "Calculadora de CD",
@@ -41,7 +41,7 @@ const es = {
     },
   },
   penaltyPage: {
-    title: "Calculadora de penalización por retiro anticipado de CD - Calcule cargos e intereses",
+    title: "Calculadora de Penalización por Retiro Anticipado de CD",
     description: "Calcule el costo exacto de cancelar su CD antes de tiempo. Compare penalizaciones, intereses netos y tasas de equilibrio para decidir si vale la pena cambiar.",
     keywords: "calculadora penalizacion cd, retiro anticipado cd, penalidad certificado deposito",
     aboutTitle: "Sobre las penalizaciones por retiro anticipado",
@@ -163,6 +163,9 @@ const es = {
     tools: "Herramientas",
     learn: "Aprender",
     calculators: "Calculadoras",
+    breadcrumbHome: "Inicio",
+    breadcrumbCalculators: "Calculadoras",
+    breadcrumbGuide: "Guías",
   },
   header: {
     siteName: "Calculadora de CD",
@@ -315,6 +318,11 @@ const es = {
     toolLadderDesc: "Construya una estrategia para tasas altas y liquidez.",
     toolSixMonth: "CD de 6 Meses",
     toolOneYear: "CD de 1 Año",
+    glossaryTitle: "Términos y definiciones clave de CD",
+    glossaryApy: "**APY (Rendimiento Anual Equivalente):** La tasa real de rendimiento ganada en una inversión, teniendo en cuenta el efecto del interés compuesto.",
+    glossaryApr: "**APR (Tasa de Interés Anual):** La tasa anual de interés sin tener en cuenta la capitalización.",
+    glossaryPrincipal: "**Principal:** La cantidad inicial de dinero que deposita en el CD.",
+    glossaryMaturity: "**Fecha de vencimiento:** La fecha específica en que finaliza el plazo del CD y puede retirar sus fondos sin penalización.",
     ctaTitle:
       "¿Listo para calcular los intereses de tu certificado de depósito?",
     ctaDescription:

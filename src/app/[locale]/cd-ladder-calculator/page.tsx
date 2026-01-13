@@ -60,7 +60,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function LadderPage({ params }: PageProps) {
   const locale = params.locale as Locale;
   const t = await getTranslations({ locale, namespace: 'ladderPage' });
+  const nav = await getTranslations({ locale, namespace: 'navigation' });
   const home = await getTranslations({ locale, namespace: 'home' });
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: nav('breadcrumbHome'),
+        item: SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('title'),
+        item: `${SITE_URL}/cd-ladder-calculator`,
+      },
+    ],
+  };
 
   const contentMarkdown = `
 ## ${t('aboutTitle')}
@@ -93,6 +113,11 @@ ${t('howItWorksContent')}
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
           </div>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
 
           <CTA
             title={home('ctaTitle')}
