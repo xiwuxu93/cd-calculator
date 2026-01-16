@@ -27,6 +27,7 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
   const [rateMode, setRateMode] = useState<'apy' | 'nominal'>('apy');
   const [termStr, setTermStr] = useState(String(initialTerm));
   const [compounding, setCompounding] = useState<Compounding>('monthly');
+  const [isPayout, setIsPayout] = useState(false); // New Payout Mode
   const [errors, setErrors] = useState<{ principal?: string; apy?: string; term?: string }>({});
   const [showAfterTax, setShowAfterTax] = useState(false);
   const [taxRateStr, setTaxRateStr] = useState('22.0');
@@ -45,11 +46,17 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
   const result = useMemo(() => {
     try {
       if (principal <= 0 || rate < 0 || termMonths <= 0) return null;
-      return calculateMaturity({ principal, apy: effectiveApy, termMonths, compounding });
+      return calculateMaturity({
+        principal,
+        apy: effectiveApy,
+        termMonths,
+        compounding,
+        isPayout
+      });
     } catch {
       return null;
     }
-  }, [principal, rate, termMonths, compounding, effectiveApy]);
+  }, [principal, rate, termMonths, compounding, effectiveApy, isPayout]);
 
   const copyToClipboard = async () => {
     if (!result) return;
@@ -57,10 +64,6 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
     try {
       await navigator.clipboard.writeText(summary);
       trackEvent('copy_result', { tool: 'cd_calculator' });
-      // Optional: lightweight alert; avoid heavy toast libs
-      window.setTimeout(() => {
-        // no-op visual; could add aria-live message
-      }, 0);
     } catch {}
   };
 
@@ -70,6 +73,7 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
     setTermStr('12');
     setCompounding('monthly');
     setRateMode('apy');
+    setIsPayout(false);
     setErrors({});
   };
 
@@ -191,8 +195,37 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
           </div>
         </div>
 
+        {/* Payout Mode Toggle */}
+        <div className="mt-4 pt-4 border-t border-gray-100">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t('payoutModeLabel')}
+          </label>
+          <div className="flex flex-col sm:flex-row gap-3 text-sm">
+            <label className="inline-flex items-center gap-2 cursor-pointer">
+              <input 
+                type="radio" 
+                name="payout-mode" 
+                checked={!isPayout} 
+                onChange={()=>setIsPayout(false)}
+                className="text-blue-600 focus:ring-blue-600"
+              />
+              {t('payoutModeCompound')}
+            </label>
+            <label className="inline-flex items-center gap-2 cursor-pointer">
+              <input 
+                type="radio" 
+                name="payout-mode" 
+                checked={isPayout} 
+                onChange={()=>setIsPayout(true)}
+                className="text-blue-600 focus:ring-blue-600"
+              />
+              {t('payoutModeWithdraw')}
+            </label>
+          </div>
+        </div>
+
         {/* Quick term chips */}
-        <div className="mt-3 flex flex-wrap gap-2 text-sm">
+        <div className="mt-4 flex flex-wrap gap-2 text-sm">
           {[3,6,9,12,18,24,36,48,60].map((m)=> (
             <button key={m} type="button" onClick={()=>setTermStr(String(m))} className={`rounded-full border px-3 py-1 ${Number(termStr)===m? 'border-blue-600 text-blue-700':'border-gray-300 text-gray-700 hover:border-blue-600'}`}>
               {m}m
@@ -211,6 +244,7 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
                   apy: Number.isFinite(effectiveApy) ? Number((effectiveApy * 100).toFixed(2)) : undefined,
                   termMonths,
                   compounding,
+                  isPayout,
                 });
               }
             }}
@@ -273,12 +307,24 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
               ${result.interestEarned.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
           </div>
-          <div className="rounded-lg border border-gray-200 p-4 bg-white">
-            <div className="text-sm text-gray-600">{t('effectiveYield')}</div>
-            <div className="mt-1 text-xl font-semibold text-blue-700">
-              {(result.effectiveAnnualYield * 100).toFixed(2)}%
+          
+          {/* Conditional 3rd Box: Effective Yield OR Periodic Payout */}
+          {isPayout && result.periodicPayout ? (
+             <div className="rounded-lg border border-gray-200 p-4 bg-white ring-2 ring-blue-500">
+               <div className="text-sm text-gray-600">{t('periodicPayout')}</div>
+               <div className="mt-1 text-xl font-semibold text-blue-700">
+                 ${result.periodicPayout.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                 <span className="text-xs font-normal text-gray-500 ml-1">/{compounding.replace('ly','')}</span>
+               </div>
+             </div>
+          ) : (
+            <div className="rounded-lg border border-gray-200 p-4 bg-white">
+              <div className="text-sm text-gray-600">{t('effectiveYield')}</div>
+              <div className="mt-1 text-xl font-semibold text-blue-700">
+                {(result.effectiveAnnualYield * 100).toFixed(2)}%
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
 
@@ -302,13 +348,19 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
 
       {/* Schedule - on demand */}
       {result && (
-        <Schedule principal={principal} apy={effectiveApy} termMonths={termMonths} compounding={compounding} />
+        <Schedule 
+          principal={principal} 
+          apy={effectiveApy} 
+          termMonths={termMonths} 
+          compounding={compounding} 
+          isPayout={isPayout}
+        />
       )}
     </section>
   );
 }
 
-type ScheduleProps = { principal: number; apy: number; termMonths: number; compounding: Compounding };
+type ScheduleProps = { principal: number; apy: number; termMonths: number; compounding: Compounding; isPayout: boolean };
 
 function perYear(comp: Compounding) {
   switch (comp) {
@@ -321,33 +373,38 @@ function perYear(comp: Compounding) {
   }
 }
 
-function Schedule({ principal, apy, termMonths, compounding }: ScheduleProps) {
+function Schedule({ principal, apy, termMonths, compounding, isPayout }: ScheduleProps) {
   const t = useTranslations('calculator');
   const [open, setOpen] = useState(false);
   const n = perYear(compounding);
+  
+  // r is periodic rate
   const r = Math.pow(1 + apy, 1 / n) - 1;
+  
   const total = (termMonths / 12) * n;
   const full = Math.floor(total);
   const frac = total - full;
 
-  const rows: { index: string; start: number; interest: number; end: number }[] = [];
+  const rows: { index: string; start: number; interest: number; end: number; paidOut: boolean }[] = [];
   let bal = principal;
+  
   for (let i = 1; i <= full; i++) {
     const interest = bal * r;
-    const end = bal + interest;
-    rows.push({ index: String(i), start: bal, interest, end });
+    const end = isPayout ? bal : bal + interest; // if payout, balance stays same
+    rows.push({ index: String(i), start: bal, interest, end, paidOut: isPayout });
     bal = end;
   }
   if (frac > 0) {
+    // Fractional period interest
     const growth = Math.pow(1 + r, frac);
     const interest = bal * (growth - 1);
-    const end = bal + interest;
-    rows.push({ index: `${full + 1}*`, start: bal, interest, end });
+    const end = isPayout ? bal : bal + interest;
+    rows.push({ index: `${full + 1}*`, start: bal, interest, end, paidOut: isPayout });
   }
 
   const exportCSV = () => {
-    const header = ['Period','Start Balance','Interest','End Balance'];
-    const lines = rows.map(r=>[r.index,r.start.toFixed(2),r.interest.toFixed(2),r.end.toFixed(2)].join(','));
+    const header = ['Period','Start Balance','Interest','End Balance', isPayout ? 'Paid Out' : 'Reinvested'];
+    const lines = rows.map(r=>[r.index,r.start.toFixed(2),r.interest.toFixed(2),r.end.toFixed(2), isPayout ? 'Yes' : 'No'].join(','));
     const csv = [header.join(','), ...lines].join('\n');
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);

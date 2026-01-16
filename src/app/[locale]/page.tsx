@@ -132,6 +132,12 @@ ${home('aboutContent')}
 
 ${home('bankSectionContent')}
 
+- [Chase CD Calculator](/bank/chase-cd-calculator)
+- [Wells Fargo CD Calculator](/bank/wells-fargo-cd-calculator)
+- [Navy Federal CD Calculator](/bank/navy-federal-cd-calculator)
+- [Bank of America CD Calculator](/bank/bank-of-america-cd-calculator)
+- [Citibank CD Calculator](/bank/citibank-cd-calculator)
+
 ## ${home('comparisonTitle')}
 
 ${home('comparisonContent')}

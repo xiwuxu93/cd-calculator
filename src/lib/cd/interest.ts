@@ -36,21 +36,41 @@ function roundToCents(value: number): number {
 }
 
 export function calculateMaturity(input: CDInput): CDResult {
-  const { principal, apy, termMonths, compounding } = input;
+  const { principal, apy, termMonths, compounding, isPayout = false } = input;
 
   if (!isFinite(principal) || principal < 0) throw new Error('Invalid principal');
   if (!isFinite(apy) || apy < 0) throw new Error('Invalid APY');
   if (!isFinite(termMonths) || termMonths < 0) throw new Error('Invalid term');
 
   const n = periodsPerYear(compounding);
-  const r = apyToPeriodicRate(apy, compounding);
+  const r = apyToPeriodicRate(apy, compounding); // This is the effective periodic rate
   const periods = (termMonths / 12) * n; // may be fractional
 
-  // Growth factor for possibly fractional periods:
-  const growth = Math.pow(1 + r, periods);
-  const maturityUnrounded = principal * growth;
-  const maturityValue = roundToCents(maturityUnrounded);
-  const interestEarned = roundToCents(maturityValue - principal);
+  let maturityValue = 0;
+  let interestEarned = 0;
+  let periodicPayout = 0;
+
+  if (isPayout) {
+    // Simple Interest / Payout Mode
+    // We calculate interest per period based on the rate and pay it out.
+    // Periodic Interest = P * r
+    // Total Interest = Periodic Interest * periods
+    // Maturity = Principal (since interest is withdrawn)
+    
+    // Note: r here is derived from APY. 
+    // If input was APY=5.12% (monthly), r = (1.0512)^(1/12) - 1 approx 0.00416...
+    // Payout = P * r
+    
+    periodicPayout = roundToCents(principal * r);
+    interestEarned = roundToCents(periodicPayout * periods); 
+    maturityValue = principal; 
+  } else {
+    // Compound Growth
+    const growth = Math.pow(1 + r, periods);
+    const maturityUnrounded = principal * growth;
+    maturityValue = roundToCents(maturityUnrounded);
+    interestEarned = roundToCents(maturityValue - principal);
+  }
 
   return {
     maturityValue,
@@ -58,5 +78,6 @@ export function calculateMaturity(input: CDInput): CDResult {
     effectiveAnnualYield: apy,
     periodicRate: r,
     periods,
+    periodicPayout: isPayout ? periodicPayout : undefined,
   };
 }
