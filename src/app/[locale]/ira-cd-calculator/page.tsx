@@ -2,8 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LadderCalculator from '@/components/cd/LadderCalculator';
-import LadderVisualizer from '@/components/cd/LadderVisualizer';
+import Calculator from '@/components/cd/Calculator';
 import MarkdownContent from '@/components/MarkdownContent';
 import CTA from '@/components/CTA';
 import JsonLd from '@/components/JsonLd';
@@ -17,9 +16,9 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
-  const t = await getTranslations({ locale, namespace: 'ladderPage' });
+  const t = await getTranslations({ locale, namespace: 'iraPage' });
   const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
-  const localizedUrl = `${SITE_URL}${localePrefix}/cd-ladder-calculator`;
+  const localizedUrl = `${SITE_URL}${localePrefix}/ira-cd-calculator`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
   return {
@@ -29,9 +28,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: localizedUrl,
       languages: {
-        en: `${SITE_URL}/cd-ladder-calculator`,
-        es: `${SITE_URL}/es/cd-ladder-calculator`,
-        'x-default': `${SITE_URL}/cd-ladder-calculator`,
+        en: `${SITE_URL}/ira-cd-calculator`,
+        es: `${SITE_URL}/es/ira-cd-calculator`,
+        'x-default': `${SITE_URL}/ira-cd-calculator`,
       },
     },
     openGraph: {
@@ -59,9 +58,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function LadderPage({ params }: PageProps) {
+export default async function IraPage({ params }: PageProps) {
   const locale = params.locale as Locale;
-  const t = await getTranslations({ locale, namespace: 'ladderPage' });
+  const t = await getTranslations({ locale, namespace: 'iraPage' });
   const nav = await getTranslations({ locale, namespace: 'navigation' });
   const home = await getTranslations({ locale, namespace: 'home' });
   const common = await getTranslations({ locale, namespace: 'common' });
@@ -80,7 +79,7 @@ export default async function LadderPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 2,
         name: t('title'),
-        item: `${SITE_URL}/cd-ladder-calculator`,
+        item: `${SITE_URL}/ira-cd-calculator`,
       },
     ],
   };
@@ -93,6 +92,10 @@ ${t('aboutContent')}
 ## ${t('howItWorksTitle')}
 
 ${t('howItWorksContent')}
+
+## ${t('advantagesTitle')}
+
+${t('advantagesContent')}
 `;
 
   return (
@@ -113,12 +116,11 @@ ${t('howItWorksContent')}
           </div>
 
           <div className="mb-12">
-            <LadderCalculator />
+            <Calculator initialTerm={60} />
           </div>
 
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
-            <LadderVisualizer />
           </div>
 
           <JsonLd name={t('title')} description={t('description')} />

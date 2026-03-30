@@ -8,7 +8,7 @@ const en = {
     learnMore: "Learn more",
   },
   metadata: {
-    title: "CD Calculator - Free Certificate of Deposit Interest Calculator",
+    title: "Free CD Calculator 2026 - Accurate Interest & APY Estimates",
     description: "Calculate CD interest, total maturity value, and effective annual yield in seconds. Clean, accurate, mobile-friendly.",
     keywords: "cd calculator, certificate of deposit calculator, cd interest calculator, cd apy calculator, compounded daily, compounded monthly, savings calculator",
     siteName: "CD Calculator",
@@ -71,8 +71,8 @@ const en = {
     keywords: "cd ladder calculator, cd laddering strategy, certificate of deposit ladder",
     aboutTitle: "What is a CD Ladder?",
     aboutContent: "A CD ladder is a savings strategy where you divide a sum of money into equal amounts and invest them in Certificates of Deposit (CDs) with different maturity dates. This approach provides a balance between the higher interest rates of long-term CDs and the liquidity of short-term CDs.",
-    howItWorksTitle: "How it Works",
-    howItWorksContent: "Instead of locking all your money in a single 5-year CD, you might split it into five CDs maturing in 1, 2, 3, 4, and 5 years. As each CD matures, you have the option to use the cash or reinvest it into a new 5-year CD, eventually creating a portfolio where a CD matures every year while earning the higher long-term rates.",
+    howItWorksTitle: "How a CD Ladder Strategy Works",
+    howItWorksContent: "Instead of locking all your money in a single long-term CD, a laddering strategy splits your deposit across multiple terms. For example, a **3-Year Ladder** might involve investing in 1-year, 2-year, and 3-year CDs simultaneously. As each CD matures, you reinvest it into a new 3-year CD. A **5-Year Ladder** expands this to 1, 2, 3, 4, and 5-year terms. This ensures you have access to a portion of your funds every year (liquidity) while eventually earning the higher interest rates typically reserved for longer-term commitments.",
   },
   howToPage: {
     title: "How to Calculate CD Interest: A Step-by-Step Guide",
@@ -122,6 +122,17 @@ const en = {
     advantagesTitle: "Why Choose a 1-Year CD?",
     advantagesContent: "- **Guaranteed Return:** Lock in a high rate today even if market rates fall later this year.\n- **Safety:** Your principal and interest are guaranteed.\n- **Standard Term:** Almost every bank offers special promotions for 12-month terms, making it easy to find great rates.",
   },
+  iraPage: {
+    title: "IRA CD Calculator - Calculate Tax-Deferred Growth",
+    description: "Estimate returns for Individual Retirement Account (IRA) CDs. See how tax-deferred compounding accelerates your retirement savings over time.",
+    keywords: "ira cd calculator, ira certificate of deposit, tax deferred cd calculator",
+    aboutTitle: "About IRA CDs",
+    aboutContent: "An IRA CD is a Certificate of Deposit held within an Individual Retirement Account (Traditional or Roth). It combines the guaranteed returns of a CD with the tax advantages of an IRA, making it a very secure way to grow retirement savings.",
+    howItWorksTitle: "Tax-Deferred Returns",
+    howItWorksContent: "With a Traditional IRA CD, you don't pay taxes on the interest you earn each year. Instead, taxes are deferred until you withdraw the money in retirement. This allows your money to compound faster because you earn 'interest on the interest' that would have otherwise gone to taxes.",
+    advantagesTitle: "Why Choose an IRA CD?",
+    advantagesContent: "- **Tax Advantages:** Enjoy tax-deferred (Traditional) or tax-free (Roth) growth.\n- **Zero Market Risk:** Your principal is protected, unlike stocks or mutual funds.\n- **Predictable Growth:** Guaranteed interest rates help you plan your retirement income accurately.",
+  },
   locales: {
     en: {
       name: "English",
@@ -138,6 +149,7 @@ const en = {
   },
   common: {
     siteName: "CD Calculator",
+    usp: "No-signup required, accurate daily compounding support.",
     allRightsReserved: "All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
@@ -330,6 +342,11 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     ctaTitle: "Ready to calculate your CD interest?",
     ctaDescription: "Enter your deposit, APY, and term to see your maturity value.",
     ctaButton: "Calculate Now",
+    glossaryTitle: "CD Glossary",
+    glossaryApy: "APY (Annual Percentage Yield)",
+    glossaryApr: "APR (Annual Percentage Rate)",
+    glossaryPrincipal: "Principal",
+    glossaryMaturity: "Maturity Date",
     bankSectionTitle: "Compatible with Major US Banks",
     bankSectionContent: "Our calculator is designed to handle the compounding frequencies and terms offered by top financial institutions. Whether you have a CD with **Navy Federal Credit Union**, **Chase Bank**, **Wells Fargo**, **Bank of America**, or **Citibank**, simply enter your APY and term to verify your interest earnings. We support daily, monthly, and quarterly compounding options used by these banks.",
     comparisonTitle: "CD vs. Savings Account: Which is Better?",

@@ -99,6 +99,21 @@ ${t('excelExample')}
 ## ${t('compoundingTitle')}
 
 ${t('compoundingContent')}
+
+### Beyond Basic Calculations
+
+Once you understand how to calculate CD interest, you might want to explore advanced strategies. Consider building a **[CD ladder strategy](/${locale}/cd-ladder-calculator)** to maximize long-term yields while maintaining liquidity. Or, if you need to break a CD early, use our **[early withdrawal penalty calculator](/${locale}/early-withdrawal-penalty-calculator)** to estimate the costs.
+
+## People Also Ask (FAQ)
+
+**Can I calculate CD interest with simple interest?**
+Most CDs use compound interest. Simple interest is rarely used for CDs today, but if yours does, the formula is simply \`Interest = P * r * t\`.
+
+**How often does a CD compound?**
+The majority of modern high-yield CDs compound daily and credit the interest monthly.
+
+**Do I pay taxes on CD interest before it matures?**
+Yes, usually you owe taxes on the interest credited to your account each year, even if you don't withdraw it. Consider an **[IRA CD](/${locale}/ira-cd-calculator)** if you want tax-deferred growth.
 `;
 
   return (

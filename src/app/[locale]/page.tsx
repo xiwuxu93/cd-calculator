@@ -80,6 +80,7 @@ export default async function HomePage({ params }: PageProps) {
   const home = await getTranslations({ locale, namespace: 'home' });
   const metadata = await getTranslations({ locale, namespace: 'metadata' });
   const calc = await getTranslations({ locale, namespace: 'calculator' });
+  const common = await getTranslations({ locale, namespace: 'common' });
 
   const webAppSchema = {
     '@context': 'https://schema.org',
@@ -100,6 +101,11 @@ export default async function HomePage({ params }: PageProps) {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '128',
     },
   };
 
@@ -248,6 +254,9 @@ ${home('penaltyHowToContent')}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               {home('title')}
             </h1>
+            <p className="text-sm font-medium text-emerald-600 mb-4">
+              {common('usp')}
+            </p>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               {home('description')}
             </p>

@@ -1,7 +1,7 @@
 const es = {
   metadata: {
     title:
-      "Calculadora de CD - Intereses de Certificados de Depósito",
+      "Calculadora de CD 2026 Gratis - Intereses y APY al Instante",
     description:
       "Calcula el interés de tu CD, valor al vencimiento y APY en segundos. Herramienta precisa, gratuita y optimizada para móviles.",
     keywords:
@@ -69,8 +69,8 @@ const es = {
     keywords: "calculadora escalera cd, estrategia escalera cd, certificado deposito escalonado",
     aboutTitle: "¿Qué es una Escalera de CD?",
     aboutContent: "Una escalera de CD es una estrategia de ahorro donde divides una suma de dinero en cantidades iguales y las inviertes en Certificados de Depósito (CD) con diferentes fechas de vencimiento. Este enfoque proporciona un equilibrio entre las tasas de interés más altas de los CD a largo plazo y la liquidez de los CD a corto plazo.",
-    howItWorksTitle: "Cómo Funciona",
-    howItWorksContent: "En lugar de bloquear todo su dinero en un solo CD de 5 años, podría dividirlo en cinco CD que venzan en 1, 2, 3, 4 y 5 años. A medida que cada CD vence, tiene la opción de usar el efectivo o reinvertirlo en un nuevo CD de 5 años, creando eventualmente una cartera donde un CD vence cada año mientras gana las tasas más altas a largo plazo.",
+    howItWorksTitle: "Cómo Funciona una Estrategia de Escalera de CD",
+    howItWorksContent: "En lugar de bloquear todo su dinero en un solo CD a largo plazo, una estrategia de escalera divide su depósito en múltiples plazos. Por ejemplo, una **Escalera de 3 Años** podría implicar invertir en CD de 1 año, 2 años y 3 años simultáneamente. A medida que cada CD vence, lo reinvierte en un nuevo CD de 3 años. Una **Escalera de 5 Años** amplía esto a plazos de 1, 2, 3, 4 y 5 años. Esto garantiza que tenga acceso a una parte de sus fondos cada año (liquidez) mientras eventualmente gana las tasas de interés más altas que normalmente se reservan para compromisos a más largo plazo.",
   },
   howToPage: {
     title: "Cómo Calcular el Interés de un CD: Guía Paso a Paso",
@@ -120,6 +120,17 @@ const es = {
     advantagesTitle: "¿Por qué elegir un CD de 1 año?",
     advantagesContent: "- **Retorno Garantizado:** Asegure una tasa alta hoy incluso si las tasas del mercado bajan más adelante este año.\n- **Seguridad:** Su capital e intereses están garantizados.\n- **Plazo Estándar:** Casi todos los bancos ofrecen promociones especiales para plazos de 12 meses, lo que facilita encontrar excelentes tasas.",
   },
+  iraPage: {
+    title: "Calculadora de CD IRA - Crecimiento con impuestos diferidos",
+    description: "Estime los rendimientos de los CD de Cuentas de Jubilación Individual (IRA). Vea cómo la capitalización con impuestos diferidos acelera sus ahorros para la jubilación.",
+    keywords: "calculadora cd ira, certificado de deposito ira, calculadora cd impuestos diferidos",
+    aboutTitle: "Sobre los CD IRA",
+    aboutContent: "Un CD IRA es un Certificado de Depósito mantenido dentro de una Cuenta de Jubilación Individual (Tradicional o Roth). Combina los rendimientos garantizados de un CD con las ventajas fiscales de una IRA.",
+    howItWorksTitle: "Rendimientos con impuestos diferidos",
+    howItWorksContent: "Con un CD IRA Tradicional, no paga impuestos sobre los intereses cada año. En su lugar, los impuestos se difieren hasta que retira el dinero. Esto permite que su dinero se capitalice más rápido porque gana intereses sobre el dinero que de otro modo habría ido a impuestos.",
+    advantagesTitle: "¿Por qué elegir un CD IRA?",
+    advantagesContent: "- **Ventajas fiscales:** Disfrute de crecimiento con impuestos diferidos (Tradicional) o libre de impuestos (Roth).\n- **Cero riesgo de mercado:** Su capital está protegido.\n- **Crecimiento predecible:** Tasas garantizadas que ayudan a planificar su jubilación.",
+  },
   locales: {
     en: {
       name: "Inglés",
@@ -136,6 +147,7 @@ const es = {
   },
   common: {
     siteName: "Calculadora de CD",
+    usp: "Sin registro, soporte preciso de capitalización diaria.",
     allRightsReserved: "Reservados todos los derechos.",
     privacyPolicy: "política de privacidad",
     termsOfService: "Condiciones del servicio",
@@ -329,6 +341,11 @@ const es = {
     ctaDescription:
       "Ingrese su depósito, TAE y plazo para ver el valor de vencimiento.",
     ctaButton: "Calcula ahora",
+    glossaryTitle: "Glosario de CD",
+    glossaryApy: "APY (Porcentaje de Rendimiento Anual)",
+    glossaryApr: "APR (Tasa de Porcentaje Anual)",
+    glossaryPrincipal: "Capital (Principal)",
+    glossaryMaturity: "Fecha de Vencimiento",
     bankSectionTitle: "Compatible con los principales bancos de EE. UU.",
     bankSectionContent: "Nuestra calculadora está diseñada para manejar las frecuencias de capitalización y los plazos ofrecidos por las principales instituciones financieras. Ya sea que tenga un CD con **Navy Federal Credit Union**, **Chase Bank**, **Wells Fargo**, **Bank of America** o **Citibank**, simplemente ingrese su TAE y plazo para verificar sus ganancias por intereses. Admitimos opciones de capitalización diaria, mensual y trimestral utilizadas por estos bancos.",
     comparisonTitle: "CD vs. Cuenta de Ahorros: ¿Cuál es mejor?",

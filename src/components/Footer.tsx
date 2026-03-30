@@ -57,6 +57,21 @@ export default async function Footer() {
                   Jumbo CD Calculator
                 </Link>
               </li>
+              <li>
+                <Link href={withPrefix('/6-month-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  6-Month CD Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/1-year-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  1-Year CD Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/ira-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  IRA CD Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 

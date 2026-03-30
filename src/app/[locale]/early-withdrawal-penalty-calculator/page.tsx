@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import PenaltyCalculator from '@/components/cd/PenaltyCalculator';
 import MarkdownContent from '@/components/MarkdownContent';
 import CTA from '@/components/CTA';
+import JsonLd from '@/components/JsonLd';
 import { Locale, defaultLocale, locales } from '@/lib/i18n';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
@@ -62,6 +63,7 @@ export default async function PenaltyPage({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: 'penaltyPage' });
   const nav = await getTranslations({ locale, namespace: 'navigation' });
   const home = await getTranslations({ locale, namespace: 'home' });
+  const common = await getTranslations({ locale, namespace: 'common' });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -137,6 +139,9 @@ ${t('strategiesContent')}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               {t('title')}
             </h1>
+            <p className="text-sm font-medium text-emerald-600 mb-4">
+              {common('usp')}
+            </p>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               {t('description')}
             </p>
@@ -149,6 +154,8 @@ ${t('strategiesContent')}
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
           </div>
+
+          <JsonLd name={t('title')} description={t('description')} />
 
           <script
             type="application/ld+json"

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import CDCalculator from '@/components/cd/Calculator';
 import MarkdownContent from '@/components/MarkdownContent';
 import ToolGrid from '@/components/ToolGrid';
@@ -63,6 +64,7 @@ export default async function JumboPage({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: 'jumboPage' });
   const nav = await getTranslations({ locale, namespace: 'navigation' });
   const home = await getTranslations({ locale, namespace: 'home' });
+  const common = await getTranslations({ locale, namespace: 'common' });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -102,6 +104,9 @@ ${t('insuranceContent')}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               {t('title')}
             </h1>
+            <p className="text-sm font-medium text-emerald-600 mb-4">
+              {common('usp')}
+            </p>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               {t('description')}
             </p>
@@ -114,6 +119,8 @@ ${t('insuranceContent')}
           <div className="mb-12">
             <MarkdownContent content={contentMarkdown} />
           </div>
+
+          <JsonLd name={t('title')} description={t('description')} />
 
           <ToolGrid />
 
