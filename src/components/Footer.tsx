@@ -11,10 +11,20 @@ type PartnerLink = {
   href: string;
   badgeSrc?: string;
   badgeAlt?: string;
+  badgeWidth?: number;
   badgeHeight?: number;
 };
 
-const partnerLinks: PartnerLink[] = [];
+const partnerLinks: PartnerLink[] = [
+  {
+    name: 'Findly.tools',
+    href: 'https://findly.tools/cd-calculator?utm_source=cd-calculator',
+    badgeSrc: 'https://findly.tools/badges/findly-tools-badge-light.svg',
+    badgeAlt: 'Featured on Findly.tools',
+    badgeWidth: 175,
+    badgeHeight: 55,
+  }
+];
 
 export default async function Footer() {
   const [t, locale] = await Promise.all([getTranslations('common'), getLocale()]);
@@ -148,7 +158,7 @@ export default async function Footer() {
                       <a
                         href={link.href}
                         target="_blank"
-                        rel="noopener noreferrer nofollow"
+                        rel="noopener noreferrer"
                         aria-label={link.name}
                         className="inline-flex items-center justify-center"
                       >
@@ -156,8 +166,10 @@ export default async function Footer() {
                           <img
                             src={link.badgeSrc}
                             alt={link.badgeAlt || link.name}
-                            height={link.badgeHeight ?? 54}
-                            className="h-14 w-auto"
+                            width={link.badgeWidth}
+                            height={link.badgeHeight}
+                            className="w-auto"
+                            style={link.badgeHeight ? { height: `${link.badgeHeight}px` } : undefined}
                           />
                         ) : (
                           <span className="text-gray-600 hover:text-gray-900 transition">
