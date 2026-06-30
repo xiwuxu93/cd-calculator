@@ -23,6 +23,14 @@ const partnerLinks: PartnerLink[] = [
     badgeAlt: 'Featured on Findly.tools',
     badgeWidth: 175,
     badgeHeight: 55,
+  },
+  {
+    name: 'Turbo0',
+    href: 'https://turbo0.com/item/cd-calculator',
+    badgeSrc: 'https://img.turbo0.com/badge-listed-light.svg',
+    badgeAlt: 'Listed on Turbo0',
+    badgeWidth: 175,
+    badgeHeight: 54,
   }
 ];
 
@@ -188,6 +196,7 @@ export default async function Footer() {
                             alt={link.badgeAlt || link.name}
                             width={link.badgeWidth}
                             height={link.badgeHeight}
+                            loading="lazy"
                             className="w-auto"
                             style={link.badgeHeight ? { height: `${link.badgeHeight}px` } : undefined}
                           />
