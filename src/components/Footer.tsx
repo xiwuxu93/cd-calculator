@@ -31,6 +31,14 @@ const partnerLinks: PartnerLink[] = [
     badgeAlt: 'Listed on Turbo0',
     badgeWidth: 175,
     badgeHeight: 54,
+  },
+  {
+    name: 'Tooluck.org',
+    href: 'https://www.tooluck.org/item/cd-calculator',
+    badgeSrc: 'https://www.tooluck.org/badges/tooluck-badge-light.svg',
+    badgeAlt: 'Featured on Tooluck.org',
+    badgeWidth: 210,
+    badgeHeight: 55,
   }
 ];
 
