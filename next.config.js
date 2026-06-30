@@ -3,6 +3,8 @@ const withNextIntl = require('next-intl/plugin')('./src/lib/i18n.ts');
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
   },
@@ -18,6 +20,20 @@ const config = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*).(ico|png|svg|json|webmanifest)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(config);
+

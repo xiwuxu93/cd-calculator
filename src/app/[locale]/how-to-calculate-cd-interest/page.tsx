@@ -100,6 +100,22 @@ ${t('excelExample')}
 
 ${t('compoundingContent')}
 
+## ${t('manualTitle')}
+
+${t('manualContent')}
+
+## ${t('apyTitle')}
+
+${t('apyContent')}
+
+## ${t('dailyTitle')}
+
+${t('dailyContent')}
+
+## ${t('taxAvoidTitle')}
+
+${t('taxAvoidContent')}
+
 ### Beyond Basic Calculations
 
 Once you understand how to calculate CD interest, you might want to explore advanced strategies. Consider building a **[CD ladder strategy](/${locale}/cd-ladder-calculator)** to maximize long-term yields while maintaining liquidity. Or, if you need to break a CD early, use our **[early withdrawal penalty calculator](/${locale}/early-withdrawal-penalty-calculator)** to estimate the costs.

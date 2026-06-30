@@ -42,6 +42,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFreq: "weekly" as const,
       priority: 0.8,
     },
+    {
+      path: "/cd-tax-calculator",
+      changeFreq: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/cd-monthly-interest-calculator",
+      changeFreq: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/3-month-cd-calculator",
+      changeFreq: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/cd-compound-interest-calculator",
+      changeFreq: "weekly" as const,
+      priority: 0.8,
+    },
     { path: "/privacy", changeFreq: "yearly" as const, priority: 0.3 },
     { path: "/terms", changeFreq: "yearly" as const, priority: 0.3 },
     { path: "/disclaimer", changeFreq: "yearly" as const, priority: 0.3 },

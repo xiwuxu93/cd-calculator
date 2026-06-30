@@ -17,19 +17,29 @@ type CDCalculatorProps = {
   initialTerm?: number;
   initialPrincipal?: number;
   initialApy?: number;
+  defaultShowAfterTax?: boolean;
+  defaultIsPayout?: boolean;
+  defaultCompounding?: Compounding;
 };
 
-export default function CDCalculator({ initialTerm = 12, initialPrincipal = 10000, initialApy = 5.00 }: CDCalculatorProps = {}) {
+export default function CDCalculator({
+  initialTerm = 12,
+  initialPrincipal = 10000,
+  initialApy = 5.00,
+  defaultShowAfterTax = false,
+  defaultIsPayout = false,
+  defaultCompounding = 'monthly'
+}: CDCalculatorProps = {}) {
   const t = useTranslations('calculator');
 
   const [principalStr, setPrincipalStr] = useState(String(initialPrincipal));
   const [rateStr, setRateStr] = useState(initialApy.toFixed(2));
   const [rateMode, setRateMode] = useState<'apy' | 'nominal'>('apy');
   const [termStr, setTermStr] = useState(String(initialTerm));
-  const [compounding, setCompounding] = useState<Compounding>('monthly');
-  const [isPayout, setIsPayout] = useState(false); // New Payout Mode
+  const [compounding, setCompounding] = useState<Compounding>(defaultCompounding);
+  const [isPayout, setIsPayout] = useState(defaultIsPayout); // New Payout Mode
   const [errors, setErrors] = useState<{ principal?: string; apy?: string; term?: string }>({});
-  const [showAfterTax, setShowAfterTax] = useState(false);
+  const [showAfterTax, setShowAfterTax] = useState(defaultShowAfterTax);
   const [taxRateStr, setTaxRateStr] = useState('22.0');
 
   const principalRef = useRef<HTMLInputElement>(null);
@@ -68,12 +78,13 @@ export default function CDCalculator({ initialTerm = 12, initialPrincipal = 1000
   };
 
   const onReset = () => {
-    setPrincipalStr('10000');
-    setRateStr('5.00');
-    setTermStr('12');
-    setCompounding('monthly');
+    setPrincipalStr(String(initialPrincipal));
+    setRateStr(initialApy.toFixed(2));
+    setTermStr(String(initialTerm));
+    setCompounding(defaultCompounding);
     setRateMode('apy');
-    setIsPayout(false);
+    setIsPayout(defaultIsPayout);
+    setShowAfterTax(defaultShowAfterTax);
     setErrors({});
   };
 

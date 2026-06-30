@@ -82,6 +82,26 @@ export default async function Footer() {
                   IRA CD Calculator
                 </Link>
               </li>
+              <li>
+                <Link href={withPrefix('/cd-tax-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.taxCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/cd-monthly-interest-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.monthlyCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/3-month-cd-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.threeMonthCalculator')}
+                </Link>
+              </li>
+              <li>
+                <Link href={withPrefix('/cd-compound-interest-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.compoundCalculator')}
+                </Link>
+              </li>
             </ul>
           </div>
 
