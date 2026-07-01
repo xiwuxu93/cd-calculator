@@ -39,6 +39,14 @@ const partnerLinks: PartnerLink[] = [
     badgeAlt: 'Featured on Tooluck.org',
     badgeWidth: 210,
     badgeHeight: 55,
+  },
+  {
+    name: 'ToolPilot',
+    href: 'https://www.toolpilot.ai/',
+    badgeSrc: 'https://www.toolpilot.ai/cdn/shop/files/toolpilot-badge-w.png',
+    badgeAlt: 'Featured on ToolPilot',
+    badgeWidth: 150,
+    badgeHeight: 51,
   }
 ];
 
@@ -196,7 +204,7 @@ export default async function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={link.name}
-                        className="inline-flex items-center justify-center"
+                        className="inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
                       >
                         {link.badgeSrc ? (
                           <img
@@ -205,6 +213,7 @@ export default async function Footer() {
                             width={link.badgeWidth}
                             height={link.badgeHeight}
                             loading="lazy"
+                            decoding="async"
                             className="w-auto"
                             style={link.badgeHeight ? { height: `${link.badgeHeight}px` } : undefined}
                           />
