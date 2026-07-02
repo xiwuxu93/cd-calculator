@@ -81,6 +81,19 @@ export default function ThirdPartyScripts() {
           crossOrigin="anonymous"
         />
       ) : null}
+
+      <Script id="grow-queue" strategy="afterInteractive">
+        {`
+          window.growMe || ((window.growMe = function(e){window.growMe._.push(e);}),(window.growMe._=[]));
+        `}
+      </Script>
+      <Script
+        id="grow-init"
+        src="https://faves.grow.me/main.js"
+        data-grow-faves-site-id="U2l0ZToyNDk5YTFhZC02YjZhLTQyMDktOTFmYy1jMWVlYWEwYmJlMmI="
+        strategy="afterInteractive"
+        defer
+      />
     </>
   );
 }
