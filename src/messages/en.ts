@@ -217,6 +217,7 @@ const en = {
       monthlyCalculator: "CD Monthly Interest Calculator",
       threeMonthCalculator: "3-Month CD Calculator",
       compoundCalculator: "CD Compound Interest Calculator",
+      millionaireCalculator: "Millionaire Calculator",
       howToCalculate: "How to Calculate CD Interest",
       popularBanks: "Popular Bank Calculators",
     },
@@ -395,6 +396,8 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     toolThreeMonthDesc: "Calculate short-term CD interest.",
     toolCompound: "CD Compound Interest Calculator",
     toolCompoundDesc: "Compare different compounding frequencies.",
+    toolMillionaire: "Millionaire Calculator",
+    toolMillionaireDesc: "Plan your path to reach one million dollars.",
     ctaTitle: "Ready to calculate your CD interest?",
     ctaDescription: "Enter your deposit, APY, and term to see your maturity value.",
     ctaButton: "Calculate Now",
@@ -512,6 +515,59 @@ Tip: Penalties are often based on interest, not principal—our calculator appro
     contactHeading: "Contact",
     contactContent: "For questions about this disclaimer, contact us.",
   },
+  millionairePage: {
+    title: "Millionaire Calculator - Plan Your Path to $1 Million",
+    description: "Calculate exactly how long it takes to become a millionaire using compound interest. Estimate timelines, monthly savings requirements, and inflation adjustments.",
+    keywords: "millionaire calculator, how to become a millionaire, savings goal calculator, compound interest millionaire, wealth growth calculator, rule of 72",
+    aboutTitle: "About the Millionaire Calculator",
+    aboutContent: "### The Math of Wealth: How Compounding Builds a Million Dollars\n\nBecoming a millionaire isn't about guessing the next hot stock or inheriting a fortune—it is a solved math problem. The primary engine behind this math is **compound interest**, which Albert Einstein famously called the eighth wonder of the world.\n\nWhen you invest money, it generates returns. In the next compounding cycle, you earn returns on your initial investment *plus* the returns you accumulated previously. This creates an exponential growth curve that starts slowly but accelerates rapidly over time.\n\nFor example, if you start with $10,000 and invest $500 monthly at an 8% average annual return, you will cross the $1 million mark in about 35 years. While you only contributed $220,000 of your own money, compound interest did the heavy lifting by adding **$780,000** to your portfolio.\n\n### The \"Cost of Waiting\" (The Delay Tax)\n\nIn the world of compounding, time is your most valuable asset. Delaying your savings journey, even by a few years, dramatically increases the amount of money you must save monthly to reach the same goal.\n\n*   **Start at Age 25:** To reach $1 million by age 65 (assuming an 8% return), you need to save roughly **$286 per month**.\n*   **Start at Age 35:** If you wait until 35, the required monthly amount jumps to **$671 per month**.\n*   **Start at Age 45:** Delaying until 45 means you must save **$1,698 per month** to reach the exact same target.\n\nThis is the \"Delay Tax.\" The earlier you start, the less of your own money you have to put in.\n\n### Understanding Realistic Returns and the Inflation Adjustment\n\nWhen planning, it is crucial to use realistic expectations for your annual rate of return:\n*   **High-Yield Savings Accounts (HYSAs):** Generally yield 4-5% APY in high-rate environments. They are ideal for emergency funds but rarely outpace inflation enough to build long-term wealth.\n*   **The Stock Market (S&P 500):** Historically, the S&P 500 has delivered a nominal average return of about 10% per year over the long term.\n\n> [!TIP]\n> **Adjusting for Inflation**: A million dollars 30 years from now won't have the same purchasing power as a million dollars today. To calculate your future wealth in **today's dollars**, subtract inflation (usually around 2-3%) from your expected return. Using an interest rate of **7%** instead of 10% in the calculator will give you a realistic look at your actual future purchasing power.",
+    howItWorksTitle: "How it Works",
+    howItWorksContent: "### Getting the Most out of the Millionaire Calculator\n\nThis tool operates in two modes to help you plan your wealth-building strategy from different angles:\n\n*   **Mode 1: Find out when I'll reach my goal:** Enter your current savings, expected return, and what you can afford to invest monthly. The calculator will plot your growth year-by-year, showing you exactly when you will hit the million-dollar mark (or any target goal you specify).\n*   **Mode 2: Find out how much to save monthly:** If you have a firm deadline in mind—such as retiring by age 55 or hitting a wealth milestone in 20 years—switch to this mode. The calculator will work backward to show you the precise monthly savings target required.\n\n### The Rule of 72: A Quick Mental Shortcut\n\nIf you want a quick way to estimate when your investments will double without a calculator, use the **Rule of 72**. Divide 72 by your expected annual return rate:\n\n**Years to Double = 72 / Expected Annual Return Rate**\n\nFor example, if your portfolio earns an 8% annual return, your money will double roughly every 9 years ($72 / 8 = 9$). If you have $250,000 today, it will grow to $500,000 in 9 years, and reach $1,000,000 in 18 years.\n\n### Where to Route Your Savings: A Practical Hierarchy\n\nTo reach your goal faster, maximize the efficiency of every dollar you save:\n1.  **Secure the Match First:** If your employer offers a 401(k) match, contribute enough to get the full match. This is an immediate 100% return on your money.\n2.  **Build a Cash Buffer:** Keep 3 to 6 months of expenses in a High-Yield Savings Account. Never invest money you might need in the next 3 to 5 years.\n3.  **Maximize Tax-Advantaged Accounts:** Utilize Roth IRAs or Traditional IRAs to shelter your investment gains from taxes.\n4.  **Taxable Brokerage Accounts:** Use these for any additional savings once your retirement accounts are maxed out.",
+    faqTitle: "Frequently Asked Questions",
+    faq: [
+      {
+        question: "How long does it take to become a millionaire saving $500 a month?",
+        answer: "It depends entirely on your rate of return. If you keep it in a conservative High-Yield Savings Account yielding 4.5% APY, it will take about 49 years. However, if you invest that money in the stock market with an average 8% net annual return, you can cross $1 million in approximately 35 years. In the latter scenario, your actual cash contributions total just $210,000—the other $790,000 comes entirely from compounding interest."
+      },
+      {
+        question: "What is the average return rate of the stock market?",
+        answer: "Historically, the U.S. stock market (represented by the S&P 500 index) has yielded a nominal average annual return of approximately 10% over the last century. When adjusted for inflation, the real annual return is closer to 7% to 8%, which is the rate most financial planners use for long-term projections."
+      },
+      {
+        question: "What is the difference between simple and compound interest for reaching $1 million?",
+        answer: "Simple interest pays you returns only on your original principal. If you deposit $10,000 at 10% simple interest, you earn exactly $1,000 every single year. Compound interest pays you returns on your principal plus your accumulated interest. Year one you earn $1,000; year two you earn $1,100 (10% of $11,000); year ten you earn $2,357. Over a 30-year savings horizon, compound interest can make your final portfolio 3 to 5 times larger than simple interest."
+      },
+      {
+        question: "Is reaching $1 million still a good retirement goal?",
+        answer: "Yes, $1,000,000 remains a significant milestone that provides a strong financial safety net. According to the standard '4% rule' of retirement planning, a $1 million portfolio can generate roughly $40,000 in annual, inflation-adjusted income for 30 years without running out of money. When combined with Social Security or other retirement pensions, this supports a comfortable lifestyle for many retirees."
+      }
+    ],
+    calculatorTitle: "Millionaire Savings Planner",
+    modeLabel: "Choose Calculation Goal",
+    modeTime: "Find out when I'll reach $1M",
+    modeContribution: "Find out how much to save monthly",
+    initialSavings: "Current Savings (Initial Deposit)",
+    monthlyContribution: "Monthly Contribution",
+    annualReturn: "Expected Annual Return (%)",
+    targetAmount: "Target Goal ($)",
+    targetYears: "Target Years to Reach Goal",
+    currentAge: "Current Age",
+    targetAge: "Target Age to reach $1M",
+    yearsToTarget: "Years to reach goal",
+    monthsToTarget: "Months to reach goal",
+    totalDeposited: "Total Contributions",
+    interestEarned: "Compounding Interest Earned",
+    finalBalance: "Final Balance",
+    ageAchieved: "Age when achieved",
+    neverReach: "With your current inputs, you will never reach your goal. Try increasing your monthly contribution or expected return rate.",
+    alreadyReached: "You have already reached or exceeded your target goal with your current savings!",
+    requiredMonthly: "Required Monthly Savings",
+    yearsHeader: "Year",
+    depositsHeader: "Deposits",
+    interestHeader: "Compounding Interest",
+    balanceHeader: "Total Value",
+  },
 } as const;
 
 export default en;
+

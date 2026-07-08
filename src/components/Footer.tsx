@@ -126,6 +126,11 @@ export default async function Footer() {
                   {t('footer.compoundCalculator')}
                 </Link>
               </li>
+              <li>
+                <Link href={withPrefix('/millionaire-calculator')} className="text-gray-600 hover:text-gray-900 transition">
+                  {t('footer.millionaireCalculator')}
+                </Link>
+              </li>
             </ul>
           </div>
 

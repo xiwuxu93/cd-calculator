@@ -216,6 +216,7 @@ const es = {
       monthlyCalculator: "Calculadora de Interés Mensual",
       threeMonthCalculator: "Calculadora CD 3 Meses",
       compoundCalculator: "Calculadora de Interés Compuesto",
+      millionaireCalculator: "Calculadora de Millonario",
       howToCalculate: "Cómo Calcular Intereses",
       popularBanks: "Calculadoras de Bancos Populares",
     },
@@ -393,6 +394,8 @@ const es = {
     toolThreeMonthDesc: "Calcule el interés de CD a corto plazo.",
     toolCompound: "Calculadora de Interés Compuesto",
     toolCompoundDesc: "Compare diferentes frecuencias de capitalización.",
+    toolMillionaire: "Calculadora de Millonario",
+    toolMillionaireDesc: "Planifique su camino para alcanzar un millón de dólares.",
     ctaTitle:
       "¿Listo para calcular los intereses de tu certificado de depósito?",
     ctaDescription:
@@ -528,18 +531,67 @@ const es = {
     noRelationshipContent:
       "El uso de esta herramienta no establece una relación profesional con los propietarios o colaboradores del sitio.",
     thirdPartyHeading: "Referencias de terceros",
-    thirdPartyContent:
-      "Los enlaces a recursos externos se proporcionan para su comodidad. No respaldamos ni controlamos el contenido de terceros y no nos hacemos responsables de su exactitud.",
+    thirdPartyContent: "Los enlaces a recursos externos se proporcionan para su comodidad. No respaldamos ni controlamos el contenido de terceros y no nos hacemos responsables de su exactitud.",
     complianceHeading: "Responsabilidad del usuario",
-    complianceContent:
-      "Los usuarios son responsables de garantizar que el uso que hagan de esta herramienta cumpla con todas las leyes y regulaciones aplicables en su jurisdicción.",
+    complianceContent: "Los usuarios son responsables de garantizar que el uso que hagan de esta herramienta cumpla con todas las leyes y regulaciones aplicables en su jurisdicción.",
     updatesHeading: "Actualizaciones de políticas",
-    updatesContent:
-      "Podemos actualizar este aviso legal a medida que evolucionen los estándares o las funciones del sitio. El uso continuado implica la aceptación de la última versión.",
+    updatesContent: "Podemos actualizar este aviso legal a medida que evolucionen los estándares o las funciones del sitio. El uso continuado implica la aceptación de la última versión.",
     contactHeading: "Contacto",
-    contactContent:
-      "Para cualquier pregunta sobre esta exención de responsabilidad, contáctenos.",
+    contactContent: "Para cualquier pregunta sobre esta exención de responsabilidad, contáctenos.",
+  },
+  millionairePage: {
+    title: "Calculadora de Millonario - Planifique su camino a $1 millón",
+    description: "Calcule cuánto tiempo tardará en convertirse en millonario con el interés compuesto. Proyecte plazos, cuotas de ahorro mensual y el impacto de la inflación.",
+    keywords: "calculadora de millonario, cómo convertirse en millonario, calculadora de metas de ahorro, interés compuesto millonario, calculadora de crecimiento de riqueza, regla del 72",
+    aboutTitle: "Acerca de la Calculadora de Millonario",
+    aboutContent: "### La matemática de la riqueza: Cómo el interés compuesto construye un millón de dólares\n\nConvertirse en millonario no es cuestión de adivinar qué acción subirá mañana ni de recibir una herencia; es un problema matemático resuelto. El motor principal de este cálculo es el **interés compuesto**, que Albert Einstein describió célebremente como la octava maravilla del mundo.\n\nCuando invierte dinero, este genera rendimientos. En el siguiente ciclo de capitalización, obtiene rendimientos sobre su inversión inicial *más* los rendimientos acumulados anteriormente. Esto crea una curva de crecimiento exponencial que comienza lentamente pero se acelera de forma espectacular con el tiempo.\n\nPor ejemplo, si comienza con $10,000 y aporta $500 mensuales con un rendimiento anual promedio del 8%, superará la marca del millón de dólares en unos 35 años. Aunque usted solo habrá aportado $220,000 de su propio bolsillo, el interés compuesto hará el trabajo pesado, sumando **$780,000** a su cuenta.\n\n### El \"costo de la espera\" (El impuesto al retraso)\n\nEn el mundo del interés compuesto, el tiempo es su activo más valioso. Retrasar su plan de ahorro, aunque sea unos pocos años, incrementa drásticamente la cantidad mensual que debe ahorrar para alcanzar la misma meta.\n\n*   **Comenzar a los 25 años:** Para alcanzar $1 millón a los 65 años (asumiendo un retorno del 8%), necesita ahorrar aproximadamente **$286 al mes**.\n*   **Comenzar a los 35 años:** Si espera hasta los 35, la cuota mensual requerida sube a **$671 al mes**.\n*   **Comenzar a los 45 años:** Posponerlo hasta los 45 años significa que deberá ahorrar **$1,698 al mes** para alcanzar exactamente el mismo objetivo.\n\nEste es el \"impuesto al retraso\". Cuanto antes empiece, menos dinero propio tendrá que aportar para lograr su meta.\n\n### Rendimientos realistas y el ajuste por inflación\n\nAl planificar, es fundamental utilizar expectativas realistas para su tasa de rendimiento anual:\n*   **Cuentas de ahorro de alto rendimiento (HYSA):** Suelen ofrecer un APY del 4-5% en entornos de tasas altas. Son ideales para fondos de emergencia, pero rara vez superan la inflación lo suficiente como para crear riqueza a largo plazo.\n*   **El mercado de valores (S&P 500):** Históricamente, el S&P 500 ha registrado un rendimiento promedio nominal de aproximadamente el 10% anual a largo plazo.\n\n> [!TIP]\n> **Ajuste por inflación**: Un millón de dólares dentro de 30 años no tendrá el mismo poder adquisitivo que un millón de dólares hoy. Para calcular su riqueza futura en **dólares de hoy**, reste la inflación estimada (normalmente entre el 2% y el 3%) de su rendimiento esperado. Usar una tasa del **7%** en lugar del 10% en la calculadora le dará una visión realista de su poder adquisitivo real en el futuro.",
+    howItWorksTitle: "Cómo funciona",
+    howItWorksContent: "### Cómo sacar el máximo provecho de la calculadora de millonario\n\nEsta herramienta funciona en dos modalidades para ayudarle a diseñar su estrategia financiera desde diferentes ángulos:\n\n*   **Modo 1: Descubrir cuándo alcanzaré mi meta:** Ingrese sus ahorros actuales, el rendimiento esperado y lo que puede permitirse invertir al mes. La calculadora proyectará su crecimiento año tras año, mostrándole exactamente cuándo llegará al millón de dólares (o a cualquier meta que defina).\n*   **Modo 2: Calcular el ahorro mensual requerido:** Si tiene un plazo fijo en mente (como jubilarse a los 55 años o alcanzar una meta de patrimonio en 20 años), cambie a esta opción. La calculadora trabajará a la inversa para indicarle la cifra mensual exacta que necesita ahorrar.\n\n### La Regla del 72: Un atajo mental rápido\n\nSi quiere calcular rápidamente cuándo se duplicará su dinero sin usar una calculadora, aplique la **Regla del 72**. Divida 72 por su tasa de rendimiento anual esperada:\n\n**Años para duplicar = 72 / Tasa de rendimiento anual**\n\nPor ejemplo, si su cartera genera un rendimiento anual del 8%, su dinero se duplicará aproximadamente cada 9 años ($72 / 8 = 9$). Si hoy tiene $250,000, crecerán a $500,000 en 9 años y alcanzarán el millón de dólares en 18 años.\n\n### Dónde destinar sus ahorros: Una jerarquía práctica\n\nPara alcanzar su meta más rápido, maximice la eficiencia de cada dólar que ahorre:\n1.  **Aproveche el aporte de su empleador (Match):** Si su empresa ofrece una contribución complementaria en el plan de jubilación (como un 401k match), aporte lo necesario para obtener el máximo. Es un retorno inmediato del 100% de su dinero.\n2.  **Cree un fondo de emergencia:** Guarde entre 3 y 6 meses de gastos en una cuenta de ahorros de alto rendimiento. Nunca invierta dinero que pueda necesitar en los próximos 3 a 5 años.\n3.  **Maximice cuentas con ventajas fiscales:** Utilice planes como las cuentas IRA (Roth o Tradicional) para proteger sus ganancias de inversión de los impuestos.\n4.  **Cuentas de corretaje imponibles:** Utilice cuentas de inversión ordinarias para depositar cualquier ahorro adicional una vez que haya cubierto el límite de sus cuentas de jubilación.",
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      {
+        question: "¿Cuánto tiempo se tarda en convertirse en millonario ahorrando $500 al mes?",
+        answer: "Depende totalmente de su tasa de rendimiento. Si ahorra en una cuenta de ahorros de alto rendimiento conservadora con un 4.5% de APY, le tomará cerca de 49 años. Sin embargo, si invierte ese dinero en el mercado de valores con un rendimiento anual neto promedio del 8%, superará el millón de dólares en aproximadamente 35 años. En este último caso, sus contribuciones reales sumarán solo $210,000; los $790,000 restantes provendrán del interés compuesto."
+      },
+      {
+        question: "¿Cuál es la tasa de rendimiento promedio del mercado de valores?",
+        answer: "Históricamente, el mercado de valores de EE. UU. (representado por el índice S&P 500) ha registrado un rendimiento anual nominal promedio de aproximadamente el 10% durante el último siglo. Al ajustar por inflación, el rendimiento real neto se sitúa en torno al 7% u 8%, que es el porcentaje recomendado por los planificadores financieros para las proyecciones a largo plazo."
+      },
+      {
+        question: "¿Cuál es la diferencia entre el interés simple y el compuesto para llegar a $1 millón?",
+        answer: "El interés simple calcula los rendimientos únicamente sobre su capital inicial. Si deposita $10,000 al 10% de interés simple, ganará exactamente $1,000 cada año. El interés compuesto calcula rendimientos sobre su capital inicial más los intereses acumulados. El primer año gana $1,000; el segundo año gana $1,100 (10% de $11,000); el décimo año gana $2,357. En un horizonte de 30 años, el interés compuesto puede hacer que su saldo final sea de 3 a 5 veces mayor que con interés simple."
+      },
+      {
+        question: "¿El alcanzar $1 millón sigue siendo una buena meta de jubilación?",
+        answer: "Sí, $1,000,000 sigue siendo un hito financiero sólido que proporciona una base de jubilación muy fuerte. Según la regla clásica del '4%' de la planificación financiera, una cartera de $1 millón puede generar aproximadamente $40,000 anuales de ingresos ajustados por inflación durante 30 años sin agotarse. Al sumarse a la Seguridad Social u otras pensiones, garantiza un estilo de vida cómodo para la mayoría de los jubilados."
+      }
+    ],
+    calculatorTitle: "Planificador de Ahorro para Millonario",
+    modeLabel: "Seleccione el objetivo de cálculo",
+    modeTime: "Averiguar cuándo llegaré a $1M",
+    modeContribution: "Averiguar cuánto ahorrar al mes",
+    initialSavings: "Ahorros actuales (Depósito inicial)",
+    monthlyContribution: "Contribución mensual",
+    annualReturn: "Retorno anual esperado (%)",
+    targetAmount: "Meta objetivo ($)",
+    targetYears: "Años objetivo para alcanzar la meta",
+    currentAge: "Edad actual",
+    targetAge: "Edad objetivo para alcanzar $1M",
+    yearsToTarget: "Años para alcanzar la meta",
+    monthsToTarget: "Meses para alcanzar la meta",
+    totalDeposited: "Contribuciones totales",
+    interestEarned: "Interés compuesto ganado",
+    finalBalance: "Saldo final",
+    ageAchieved: "Edad cuando se logre",
+    neverReach: "Con sus valores actuales, nunca alcanzará su meta. Intente aumentar su contribución mensual o la tasa de rendimiento esperada.",
+    alreadyReached: "¡Ya ha alcanzado o superado su meta objetivo con sus ahorros actuales!",
+    requiredMonthly: "Ahorro mensual requerido",
+    yearsHeader: "Año",
+    depositsHeader: "Depósitos",
+    interestHeader: "Interés compuesto",
+    balanceHeader: "Valor total",
   },
 } as const;
 
 export default es;
+
