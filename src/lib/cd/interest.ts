@@ -81,3 +81,59 @@ export function calculateMaturity(input: CDInput): CDResult {
     periodicPayout: isPayout ? periodicPayout : undefined,
   };
 }
+
+export interface CDGrowthPoint {
+  period: number; // month index
+  deposits: number; // principal
+  interest: number; // cumulative interest up to this month
+  balance: number; // deposits + interest
+}
+
+export function generateCDGrowthSchedule(input: CDInput): CDGrowthPoint[] {
+  const { principal, apy, termMonths, compounding, isPayout = false } = input;
+
+  if (principal < 0 || apy < 0 || termMonths <= 0) return [];
+
+  const schedule: CDGrowthPoint[] = [];
+
+  // Period 0 (starting point)
+  schedule.push({
+    period: 0,
+    deposits: Math.round(principal),
+    interest: 0,
+    balance: Math.round(principal),
+  });
+
+  const n = periodsPerYear(compounding);
+  const r = apyToPeriodicRate(apy, compounding);
+
+  for (let m = 1; m <= termMonths; m++) {
+    const elapsedPeriods = (m / 12) * n;
+    let balance = principal;
+    let interest = 0;
+
+    if (isPayout) {
+      // Interest is paid out, balance stays equal to principal
+      const interestPerPeriod = principal * r;
+      interest = principal * r * elapsedPeriods;
+      balance = principal;
+    } else {
+      // Compounded balance
+      balance = principal * Math.pow(1 + r, elapsedPeriods);
+      interest = balance - principal;
+    }
+
+    const roundedDeposits = Math.round(principal);
+    const roundedInterest = Math.round(interest);
+    const roundedBalance = Math.round(isPayout ? principal + interest : balance);
+
+    schedule.push({
+      period: m,
+      deposits: roundedDeposits,
+      interest: roundedInterest,
+      balance: roundedBalance,
+    });
+  }
+
+  return schedule;
+}

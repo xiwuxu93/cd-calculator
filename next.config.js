@@ -18,10 +18,49 @@ const config = {
         destination: `${apex}/:path*`,
         permanent: true,
       },
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/en',
+      },
+      {
+        source: '/:path((?!es|_next|api|sitemap\\.xml|robots\\.txt|.*\\..*).*)',
+        destination: '/en/:path*',
+      },
     ];
   },
   async headers() {
     return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
       {
         source: '/(.*).(ico|png|svg|json|webmanifest)',
         headers: [

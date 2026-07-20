@@ -2,9 +2,10 @@
 
 import { useMemo, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { calculateMaturity, nominalToApy } from '@/lib/cd/interest';
+import { calculateMaturity, nominalToApy, generateCDGrowthSchedule } from '@/lib/cd/interest';
 import { trackEvent } from '@/lib/analytics';
 import type { Compounding } from '@/lib/cd/types';
+import CDChart from './CDChart';
 
 function parseNumber(value: string): number | null {
   const v = value.replace(/,/g, '').trim();
@@ -66,6 +67,17 @@ export default function CDCalculator({
     } catch {
       return null;
     }
+  }, [principal, rate, termMonths, compounding, effectiveApy, isPayout]);
+
+  const schedule = useMemo(() => {
+    if (principal <= 0 || rate < 0 || termMonths <= 0) return [];
+    return generateCDGrowthSchedule({
+      principal,
+      apy: effectiveApy,
+      termMonths,
+      compounding,
+      isPayout
+    });
   }, [principal, rate, termMonths, compounding, effectiveApy, isPayout]);
 
   const copyToClipboard = async () => {
@@ -355,6 +367,10 @@ export default function CDCalculator({
             </div>
           </div>
         </div>
+      )}
+
+      {result && schedule.length > 0 && (
+        <CDChart schedule={schedule} isPayout={isPayout} />
       )}
 
       {/* Schedule - on demand */}
